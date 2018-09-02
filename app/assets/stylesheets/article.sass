@@ -1,0 +1,94 @@
+* 	
+	// border: 1px solid black
+
+@import main
+
+.blog
+	+size(100%)
+	display: flex
+	flex-direction: column
+	padding: 20px
+	justify-content: flex-start
+	align-items: center
+
+	.blog_view
+		margin: 70px
+		padding: 40px
+		+size(60%,40%,10px)
+		box-shadow: 0 0 30px rgba(black,0.2)
+		box-sizing: border-box
+		.catalog
+			background-color: #E7E2FD
+			color: #742DFF
+			+size(100px,20px,100px)
+			// margin: 20px
+			letter-spacing: 2px
+			text-align: center
+			padding: 5px
+			font-weight: 60
+		.title
+			font-size: 40px
+			// margin: 10px
+			padding: 10px
+
+		.date
+			font-size: 16px
+			margin: 0px
+			padding: 10px
+			padding-top: 0px
+		.blog_content
+			// margin: 40px
+			padding-left: 10px
+			overflow: hidden
+		.more
+			margin-top: 10px
+			padding: 20px
+			a
+				color: #8000ff
+				font-size: 20px
+				// border: 0
+				text-align: left
+				border-bottom-color: #8000ff
+				// padding: 20px
+				outline: none
+
+
+
+//show
+
+.post
+	+size(100%)
+	display: flex
+	flex-direction: column
+	padding: 20px
+	justify-content: flex-start
+	align-items: center
+	.catalog
+		background-color: #E7E2FD
+		color: #742DFF
+		+size(100px,20px,100px)
+		// margin: 20px
+		letter-spacing: 2px
+		text-align: center
+		padding: 5px
+		font-weight: 60
+	.title
+		font-size: 40px
+		// margin: 10px
+		padding: 10px
+
+	.date
+		font-size: 16px
+		margin: 0px
+		padding: 10px
+		padding-top: 0px
+	.blog_content
+		// margin: 40px
+		+size(70%)
+		font-size: 20px  !important
+		line-height: 40px
+		padding-left: 10px
+		font-weight: 100  !important
+		font-family: 'Playfair Display' !important
+	
+		

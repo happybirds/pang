@@ -1,0 +1,1 @@
+$redis = Redis::Namespace.new("pang_dev", :redis => Redis.new)

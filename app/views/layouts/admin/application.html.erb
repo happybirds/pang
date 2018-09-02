@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>管理后台</title>
+    <%= stylesheet_link_tag 'admin/base' %>
+    <%= javascript_include_tag 'admin/plugins/jquery.min','admin/base' %>
+
+    <%= yield :styles %>
+    <%= yield :scripts %>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <!-- TOP -->
+    <div class="page-header navbar navbar-fixed-top">
+      <%= render "admin/shared/top"%>
+    </div>
+    <!-- TOP END -->
+    <div class="clearfix"> </div>
+    <!-- MENU -->
+    <div class="page-container">
+      <%= render "admin/shared/menu"%>
+    </div>
+    <!-- MENU END -->
+    <div class="page-content-wrapper">
+      <div class="page-content">
+        <% if flash[:alert].present? %>
+          <div class="custom-alerts alert alert-danger fade in">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+            <%= flash[:alert] %>
+          </div>
+        <% end %>
+
+        <% if flash[:notice].present? %>
+          <div class="custom-alerts alert alert-success fade in">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+
+        <%= yield %>
+      </div>
+    </div>
+    <div class="page-footer">
+      <%= render "admin/shared/footer" %>
+    </div>
+
+  </body>
+</html>

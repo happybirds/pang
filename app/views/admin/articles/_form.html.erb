@@ -1,0 +1,64 @@
+<%= form_for([:admin, @article], html: { class: 'form-horizontal' }) do |f| %>
+ 
+  <div class="form-body">
+    <div class="form-group form-md-line-input">
+      <%= f.label :title, class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+        <%= f.text_field :title, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+    <div class="form-group form-md-line-input">
+      <%= f.label :catalog, class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+          <%= f.select :catalog, Article.catalogs.keys.to_a,{},{class:"form-control"} %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+<!--     <div class="form-group form-md-line-input row">
+      <%#= f.label :icon, class: 'col-sm-3 control-label' %>
+      <div class="col-md-3">
+        <%#= f.file_field :icon, class: "form-control", onchange: 'changeImage(this)' %>
+        <div class="form-control-focus"> </div>
+      </div>
+      <div class="col-sm-2">
+         <%#= image_tag @article.icon, width:'100px', id: 'img' %>
+      </div>
+    </div> -->
+    <div class="form-group form-md-line-input">
+      <%= f.label :content, class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+        <%= f.kindeditor :content , :window_onload => true%>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="form-actions">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-10">
+        <button type="submit" class="btn green btn-outline col-md-2" id="btn_ok" data-loading-text="提交中">提交</button>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<style type="text/css">
+  #imgshow{
+    position:absolute;
+    border:1px solid #ccc;
+    background:#333;
+    padding:5px;
+    color:#fff;
+    display:none;
+    width: 500px;
+  }
+</style>
+<script type="text/javascript">
+
+  function changeImage(item){
+    var output = $(item).parent().siblings().children("img")
+    output.attr("src", URL.createObjectURL(event.target.files[0]));
+  }
+</script>

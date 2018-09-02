@@ -1,0 +1,43 @@
+.product_rule {
+  padding: 15px;
+}
+.product_rule input {
+  border-radius: 5px !important;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #ddd;
+}
+.product_input {
+  padding: 15px;
+  background-color: #f8f8f8;
+}
+.product_input input {
+  width: 100px;
+}
+.product_div {
+  padding: 15px;
+}
+.product_div input {
+  width: 80px;
+}
+.product_div_div {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.product_input .product_div_div {
+  margin-bottom: 0;
+}
+.product_div_div span {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  color: #fff;
+  width: 20px;
+  line-height: 20px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50% !important;
+  background-color: rgba(153,153,153,1);
+}

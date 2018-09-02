@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display')
+
+*
+	font-family: 'Playfair Display','微软正黑体'
+	position: relative
+	// border: 1px solid black
+
+=size($w,$h:$w,$a:0)
+	width: $w
+	height: $h
+	border-radius: $a
+
+=flexCenter
+	display: flex
+	justify-content: center
+	align-items: center
+
+html,body
+	margin: 0
+	+size(100%)
+
+	// +flexCenter
+
+a
+	text-decoration: none
+	outline: none
+	appearance: none
+	color: black
+	&:hover
+		color: rgba(black,0.4)
+		border-bottom: 2px solid rgba(black,0.4)
+		cursor: pointer
+	&:active,&:visited
+		color: black
+
+
+		// &:after
+		// 	display: block
+		// 	content: ''
+		// 	+size(50px,2px)
+		// 	background-color: black
+.allstar
+	+size(100%)
+	left: 0
+	top: 0
+	position: absolute
+	overflow: hidden
+	// opacity: 0
+
+[class^='star']
+	background-color: white
+	+size(3px)
+	border-radious: 50%
+	animation: rain 2s infinite
+	z-index: 999
+
+@keyframes rain
+	0%,100%
+		opacity: 0
+	70%
+		opacity: 1
+	0%
+		transform: translate(400px,0)
+	100%
+		transform: translate(0,300px)
+
+@for $i from 1 through 30
+	.star#{$i}
+		$x: random()*100%
+		$y: random()*-80% + 50%
+		left: $x
+		top: $y
+		position: absolute
+		animation-delay: $i*-0.1s
+
+
+.container
+	// max-width: 1100px
+	width: 100%
+	height: 100%
+
+.header
+	+size(100%,80px)
+	display: flex
+	box-sizing: border-box
+	.logo
+		flex: 2
+		display: flex
+		align-items: center
+		font-size: 40px
+		margin-left: 20px
+		.logoName
+			&:hover
+				color: rgba(black,0.4)
+				translate: 5s
+				transform: scale(0.8)
+
+
+
+
+	.menu
+		flex: 1
+		ul
+			list-style: none
+			display: flex
+			justify-content: space-between
+			// align-items: center
+			font-size: 20px
+			font-weight: 400
+			li
+				padding: 10px
+
+
+.main
+	.banner
+		+size(100%,400px)
+		position: relative
+		background-image: url('http://taylormilliman.me/static/banner.3bd74df6.png')
+		background-size: cover
+		// img
+		// 	+size(100%,400px)
+		// .blog
+		// 	+size(400px,50px)
+		// 	position: absolute
+		// 	bottom: 40px
+		// 	left: 400px
+		// 	display: flex
+		// 	justify-content: center
+		// 	align-items: center
+		// 	// background-color:
+		// 	h2
+		// 		display: flex
+		// 		color: white
+		// 		opacity: 0.5
+	.path
+		padding: 20px
+		.notice
+			font-size: 20px
+			color: red
+		.route
+			// display: flex
+			margin: 20px
+			.route1
+				display: flex
+				border: 1px solid black
+				.active
+					color: red
+				ul
+					display: flex
+					flex-direction: column
+					list-style: none
+					li
+						span
+							&:after
+								display: block
+								content: ''
+								+size(5px,20px)
+								background-color: black
+			// .route12
+			// 	display: flex
+			// 	border: 1px solid black
+			// 	.active
+			// 		color: red
+			// 	ul
+			// 		display: flex
+			// 		flex-direction: column
+			// 		list-style: none
+			// 		li
+			// 			span
+			// 				&:after
+			// 					display: block
+			// 					content: ''
+			// 					+size(5px,20px)
+			// 					background-color: black

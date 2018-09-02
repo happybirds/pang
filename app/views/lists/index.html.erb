@@ -1,0 +1,96 @@
+	<div class="main">
+		<div class="banner">
+			<!-- <image src='http://taylormilliman.me/static/banner.3bd74df6.png'></image> -->
+			<!-- <div class="blog">
+				<h2>blog</h2>
+			</div> -->
+		</div>
+    <div class="path">
+      <h1>Path</h1>
+      <div class="notice"><%=@notice%></div>
+      <div class="route">
+
+      	<div class="route1">
+				<p class='distance_show'> route 1 day </p>
+				<ul class="route1daydir1">
+						<h4>MALL TO DT </h4>
+					<% @route1daydir1.each do |board|%>
+					 <% next unless !board.name.blank? %>
+						<li  data-name="<%= board.name%>" name="route1daydir1">
+							<span><%= board.name.split('_')[0]%></span>
+						</li>
+					<% end %>
+				</ul>
+					<ul class="route1daydir2">
+						<h4>DT to MALL</h4>
+					<% @route1daydir2.each do |board|%>
+					 <% next unless !board.reverse_name.blank?  %>
+						<li  data-name="<%= board.name%>" name="route1daydir2">
+							<span><%= board.reverse_name.split('_')[0]%></span>
+						</li>
+					<% end %>
+				</ul>
+
+			</div>
+
+      </div>
+
+    </div>
+	<!-- <div class="allstar">
+		<div class="star1"></div>
+		<div class="star2"></div>
+		<div class="star3"></div>
+		<div class="star4"></div>
+		<div class="star5"></div>
+		<div class="star6"></div>
+		<div class="star7"></div>
+		<div class="star8"></div>
+		<div class="star9"></div>
+		<div class="star10"></div>
+		<div class="star11"></div>
+		<div class="star12"></div>
+		<div class="star13"></div>
+		<div class="star14"></div>
+		<div class="star15"></div>
+		<div class="star16"></div>
+		<div class="star17"></div>
+		<div class="star18"></div>
+		<div class="star19"></div>
+		<div class="star20"></div>
+		<div class="star21"></div>
+		<div class="star22"></div>
+		<div class="star23"></div>
+		<div class="star24"></div>
+		<div class="star25"></div>
+		<div class="star26"></div>
+		<div class="star27"></div>
+		<div class="star28"></div>
+		<div class="star29"></div>
+		<div class="star30"></div>
+	 </div>-->
+</div>
+
+<script>
+
+function route1eveningdir1(){
+	$.rails.handleRemote($('<a>', { href: "<%= distance_path%>?routes=1evening&direction=1&route_num=1", 'data-method': 'get'}));
+}
+
+function route1daydir1(){
+	$.rails.handleRemote($('<a>', { href: "<%= distance_path%>?routes=1day&direction=1&route_num=1", 'data-method': 'get'}));
+}
+
+function route1daydir2(){
+	$.rails.handleRemote($('<a>', { href: "<%= distance_path%>?routes=1day&direction=2&route_num=1", 'data-method': 'get'}));
+}
+
+function route1eveningdir2(){
+	$.rails.handleRemote($('<a>', { href: route1eveningdir2, 'data-method': 'get'}));
+}
+// time()
+// route1daydir1()
+// setInterval(route1daydir1,10000)
+// setInterval(route1daydir2,10000)
+
+
+</script>
