@@ -1,0 +1,89 @@
+<div class="main">
+
+      <div class="path">
+
+      	<div class="route1">
+				<p class='distance_show'> route 1day </p>
+				<ul class="route1daydir1">
+						<h4>MALL TO DT </h4>
+            <!-- <span>已经进站：<div class="distance_show_finish"></div></span> -->
+						<span>当前站：<div class="distance_show"></div></span>
+					<% @route1daydir1.each do |board|%>
+					 <% next unless !board.name.blank? %>
+						<li  data-name="<%= board.name%>" name="route1daydir1">
+							<span><%= board.name.split('_')[0]%></span>
+						</li>
+					<% end %>
+				</ul>
+				<ul class="route1daydir2">
+						<h4>DT TO MALL</h4>
+            <!-- <span>已经进站：<div class="distance_show_finish"></div></span> -->
+            <span>当前站：<div class="distance_show"></div></span>
+					<% @route1daydir2.each do |board|%>
+					 <% next unless !board.reverse_name.blank?  %>
+						<li  data-name="<%= board.reverse_name.split('_')[0] %>" name="route1daydir2">
+							<span><%= board.reverse_name.split('_')[0]%></span>
+						</li>
+					<% end %>
+				</ul>
+
+			</div>
+
+    <!--   	<div class="route2">
+				<p class='distance_show'> route 1 day </p>
+				<ul class="route1daydir1">
+						<h4>MALL TO DT </h4>
+					<% @route1daydir1.each do |board|%>
+					 <% next unless !board.name.blank? %>
+						<li  data-name="<%= board.name%>" name="route1daydir1">
+							<span><%= board.name.split('_')[0]%></span>
+						</li>
+					<% end %>
+				</ul>
+					<ul class="route1daydir2">
+						<h4>DT to MALL</h4>
+					<% @route1daydir2.each do |board|%>
+					 <% next unless !board.reverse_name.blank?  %>
+						<li  data-name="<%= board.reverse_name.split('_')[0] %>" name="route1daydir2">
+							<span><%= board.reverse_name.split('_')[0]%></span>
+						</li>
+					<% end %>
+				</ul>
+
+			</div> -->
+      </div>
+
+</div>
+
+<script>
+
+function route(){
+	$.rails.handleRemote($('<a>', { href: "<%= distance_path%>", 'data-method': 'get'}));
+}
+
+// function route1daydir1(){
+// 	$.rails.handleRemote($('<a>', { href: "<%= distance_path%>?routes=1day&direction=1&route_num=1", 'data-method': 'get'}));
+// }
+//
+// function route1daydir2(){
+// 	$.rails.handleRemote($('<a>', { href: "<%= distance_path%>?routes=1day&direction=2&route_num=1", 'data-method': 'get'}));
+// }
+//
+// function route1eveningdir2(){
+// 	$.rails.handleRemote($('<a>', { href: route1eveningdir2, 'data-method': 'get'}));
+// }
+// route1daydir2()
+setInterval(route,5000)
+// setInterval(route1daydir2,10000)
+
+// var i = 0
+//
+// function time(){
+//   i++
+//   console.log(i)
+// }
+//
+// setInterval(time,1000)
+//
+// if(i )
+</script>

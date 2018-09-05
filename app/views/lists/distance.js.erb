@@ -1,6 +1,0 @@
-$('.route<%= params[:routes]%>dir<%= @dir%> li').removeClass('active')
-document.getElementsByName("route<%= params[:routes]%>dir<%= @dir%>").forEach(function(res){
-	if( '<%= raw @distance%>'.indexOf($(res).attr('data-name'))!= '-1' ){
-		$(res).addClass('active')
-	}
-})

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_193814) do
+ActiveRecord::Schema.define(version: 2018_09_05_155634) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -62,6 +62,29 @@ ActiveRecord::Schema.define(version: 2018_08_30_193814) do
     t.float "bump_samples"
     t.float "accuracy"
     t.float "battery"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "crono_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "job_id", null: false
+    t.text "log", limit: 4294967295
+    t.datetime "last_performed_at"
+    t.boolean "healthy"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_crono_jobs_on_job_id", unique: true
+  end
+
+  create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "bgcolor"
+    t.string "margin"
+    t.string "start"
+    t.string "end"
+    t.string "classroom"
+    t.integer "address"
+    t.integer "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

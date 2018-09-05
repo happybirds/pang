@@ -4,7 +4,7 @@
 			<div class="catalog"><%= article.catalog%></div>
 			<div class="title"><%= article.title%></div>
 			<div class="date"><%= article.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></div>
-			<div class="blog_content"><%= truncate(strip_tags(raw(article.content)), length: 50 )%></div>
+			<div class="blog_content"><%= truncate(strip_tags(raw(article.content)), length: 200 )%></div>
 			<div class="more"> <a href="<%= article_path(article)%>">Read more  -> </a></div>
 		</div>
 	<% end %>

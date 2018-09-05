@@ -7,7 +7,7 @@
           <span class="title">首页</span>
         </a>
       </li>
- 
+
 
 
       <li class="nav-item">
@@ -30,7 +30,26 @@
 
         </ul>
       </li>
+      <li class="nav-item">
+        <a href="javascript:;" class="nav-link nav-toggle" id="schedules_link">
+          <i class=" icon-note"></i>
+          <span class="title">课程表</span>
+          <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+          <li class="nav-item" id="schedules">
+              <a href="<%= admin_schedules_path %>" class="nav-link nav-toggle">
+                <i class="icon-settings"></i> 列表
+              </a>
+            </li>
+            <li class="nav-item" id="new_schedule">
+              <a href="<%= new_admin_schedule_path %>" class="nav-link nav-toggle">
+                <i class="icon-settings"></i> 发布
+              </a>
+            </li>
 
-      
+        </ul>
+      </li>
+
   </ul>
 </div>

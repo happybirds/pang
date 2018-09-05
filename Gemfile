@@ -44,8 +44,10 @@ gem 'mechanize'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+# gem 'whenever', require: false
+gem 'crono'
 # Use Capistrano for deployment
+gem 'daemons'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -72,6 +74,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :test do

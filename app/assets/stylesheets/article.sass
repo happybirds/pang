@@ -1,22 +1,26 @@
 * 	
 	// border: 1px solid black
 
-@import main
+@import common
 
 .blog
-	+size(100%)
+	// +size(100%)
 	display: flex
 	flex-direction: column
 	padding: 20px
-	justify-content: flex-start
+	justify-content: space-between
 	align-items: center
+	
+
 
 	.blog_view
 		margin: 70px
-		padding: 40px
-		+size(60%,40%,10px)
+		padding: 10px
+		width: 60%
+		// +size(60%,40%,10px)
 		box-shadow: 0 0 30px rgba(black,0.2)
 		box-sizing: border-box
+		// overflow: hidden
 		.catalog
 			background-color: #E7E2FD
 			color: #742DFF
@@ -57,7 +61,7 @@
 //show
 
 .post
-	+size(100%)
+	// +size(100%)
 	display: flex
 	flex-direction: column
 	padding: 20px
@@ -84,11 +88,14 @@
 		padding-top: 0px
 	.blog_content
 		// margin: 40px
-		+size(70%)
+		// +size(70%)
 		font-size: 20px  !important
 		line-height: 40px
 		padding-left: 10px
 		font-weight: 100  !important
 		font-family: 'Playfair Display' !important
+		img
+			width: 100%
+			height: 100%
 	
 		
