@@ -1,97 +1,96 @@
-Grafton & Holman Grand
-Grafton & Pownal
-Grafton & Rochford
-Euston & Rochford
-Brighton & Prince Edward Home
-North River & Villa
-North River & Green
-North River & McGill
-North River & Queen Charlotte
-North River & Inkerman
-North River & Colonel Gray
-North River & Riverview
-North River & Nassau
-North River & Hope
-North River & Charlotte
-North River & Seaview
-North River & Westview
-North River & Skyview
-North River & Warburton
-Ellen Creek Plaza & Beach Grove
-Beach Grove & Scott
-Beach Grove & Lewis Point
-Beach Grove & Maypoint
-Maypoint & April
-Maypoint & New Prince Edward Home
-Maypoint Apartments
-Maypoint Plaza & Maypoint
-Upton & Nicholas
-Watts & McCarville
-McCarville & Hillstrom
-Hillstrom & Third
-Hillstrom & Fourth
-Upton & Fourth
-Upton & Appletree
-Upton & Sandalwood
-Upton & Parricus Mead
-Upton & Royalty
-Royalty & Alderwood
-Royalty & Lower Malpeque
-Lower Malpeque & Thorndale
-Lower Malpeque & Kenwood
-Lower Malpeque & Commonwealth
-Lower Malpeque & Bell Heights North
-Lower Malpeque & Bell Heights South
-Lower Malpeque & Gates
-Lower Malpeque & Kirkdale
-Capital Drive & Esso
-Capital Drive & Comfort Inn
-Thompson & Sandstone
-Walmart Shelter
-Marks Work Warehouse
-Charlottetown Mall Shelters
-Mt. Edward & Ash
-Ash & Gamwell
-Ash & Maple
-Maple & Oak
-Oak & Ingswood
-Oak & Brackley Point
-Oak & Heather
-Oak & Roger
-Oak & Doncaster
-Oak & Barbour
-Norwood & Friar
-Robin & Scarlett
-Scarlett & Norwood
-Norwood & Elena
-Norwood & St. Peters
-Northridge & Andrews
-Northridge & Westcomb
-Westridge & Westcomb
-Westridge & Patterson
-Patterson & South Gate
-St. Peters & Ralden
-St. Peters & Valdane
-St. Peters & Duncan
-St. Peters & Ellis Bros
-Elmer Blanchard Building
-Gordon & Kensington
-Kensington & Falconwood
-Kensington & Woodward
-Kensington & Garfield
-Kensington & St. Pius X
-Kensington & Exhibition
-Kensington & Linden
-Linden & Second
-St. Peters Parkdale Pharmacy
-St. Peters & Shops of St. Avard
-Longworth & Lapthorne
-Longworth & Birchwood School
-Longworth & Champion
-Weymouth & Fitzroy
-Weymouth & College
-Grafton & Chartlottown Conference Center
-Grafton & Poly Clinic
-Grafton DVA
-Grafton & Holman Grand
-
+Board.create(name:	"Grafton & Holman Grand"	,lat:"	46.234909	",long:"-63.127472	",sort:	1	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Grafton & Pownal"	,lat:"	46.233546	",long:"-63.129587	",sort:	2	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Grafton & Rochford"	,lat:"	46.23378	",long:"-63.1326879999	",sort:	3	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Euston & Rochford"	,lat:"	46.23482	",long:"-63.134109	",sort:	4	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Brighton & Prince Edward Home"	,lat:"	46.233563	",long:"-63.1371	",sort:	5	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Villa"	,lat:"	46.2344	",long:"-63.139674	",sort:	6	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Green"	,lat:"	46.23582	",long:"-63.140627	",sort:	7	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & McGill"	,lat:"	46.23767	",long:"-63.141898	",sort:	8	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Queen Charlotte"	,lat:"	46.23844	",long:"-63.1424	",sort:	9	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Inkerman"	,lat:"	46.24068	",long:"-63.14331	",sort:	10	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Colonel Gray"	,lat:"	46.24248	",long:"-63.144428	",sort:	11	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Riverview"	,lat:"	46.24358	",long:"-63.14512	",sort:	12	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Nassau"	,lat:"	 46.2455469	",long:"-63.146339	",sort:	13	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Hope"	,lat:"	46.24765	",long:"-63.147724	",sort:	14	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Charlotte"	,lat:"	46.24928	",long:"-63.1487031	",sort:	15	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Seaview"	,lat:"	46.2510209	",long:" -63.149771	",sort:	16	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Westview"	,lat:"	46.2523449	",long:"-63.150605	",sort:	17	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Skyview"	,lat:"	46.25351	",long:"-63.1512871	",sort:	18	,route_name:"2day",route_num:	2	)
+Board.create(name:	"North River & Warburton"	,lat:"	 46.255158999	",long:"-63.152259	",sort:	19	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Ellen Creek Plaza & Beach Grove"	,lat:"	 46.25748	",long:"-63.155226	",sort:	20	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Beach Grove & Scott"	,lat:"	46.257288	",long:"-63.157243	",sort:	21	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Beach Grove & Lewis Point"	,lat:"	46.256109	",long:"-63.160773	",sort:	22	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Beach Grove & Maypoint"	,lat:"	46.254152	",long:"-63.16718	",sort:	23	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Maypoint & April"	,lat:"	46.256471	",long:"-63.16843	",sort:	24	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Maypoint & New Prince Edward Home"	,lat:"	46.2585	",long:" -63.169667	",sort:	25	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Maypoint Apartments"	,lat:"	46.25968899	",long:"-63.170322	",sort:	26	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Maypoint Plaza & Maypoint"	,lat:"	46.260744	",long:"-63.168781	",sort:	27	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Upton & Nicholas"	,lat:"	46.262564	",long:"-63.16989	",sort:	28	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Watts & McCarville"	,lat:"	46.264906	",long:"-63.170004	",sort:	29	,route_name:"2day",route_num:	2	)
+Board.create(name:	"McCarville & Hillstrom"	,lat:"	 46.26578	",long:"-63.167343	",sort:	30	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Hillstrom & Third"	,lat:"	46.26793	",long:"-63.168357	",sort:	31	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Hillstrom & Fourth"	,lat:"	46.2697	",long:" -63.16927	",sort:	32	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Upton & Fourth"	,lat:"	46.26869	",long:" -63.173649	",sort:	33	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Upton & Appletree"	,lat:"	46.272014	",long:"-63.175889	",sort:	34	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Upton & Sandalwood"	,lat:"	46.274023	",long:"-63.17721	",sort:	35	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Upton & Parricus Mead"	,lat:"	46.2784	",long:"-63.180042	",sort:	36	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Upton & Royalty"	,lat:"	46.279775	",long:"-63.18085	",sort:	37	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Royalty & Alderwood"	,lat:"	46.2805059	",long:"-63.1773399	",sort:	38	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Royalty & Lower Malpeque"	,lat:"	 46.28203	",long:"-63.169291	",sort:	39	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Lower Malpeque & Thorndale"	,lat:"	46.28031	",long:"-63.16816	",sort:	40	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Lower Malpeque & Kenwood"	,lat:"	46.2786	",long:"-63.16709	",sort:	41	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Lower Malpeque & Commonwealth"	,lat:"	46.276495	",long:"-63.165738	",sort:	42	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Lower Malpeque & Bell Heights North"	,lat:"	46.27497	",long:"-63.164743	",sort:	43	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Lower Malpeque & Bell Heights South"	,lat:"	46.2729	",long:"-63.163539	",sort:	44	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Lower Malpeque & Gates"	,lat:"	46.267488	",long:"-63.16007	",sort:	45	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Lower Malpeque & Kirkdale"	,lat:"	46.265735	",long:"-63.159	",sort:	46	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Capital Drive & Esso"	,lat:"	46.264387	",long:"-63.157404	",sort:	47	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Capital Drive & Comfort Inn"	,lat:"	46.264539	",long:" -63.1559	",sort:	48	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Thompson & Sandstone"	,lat:"	46.264568	",long:" -63.152759	",sort:	49	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Walmart Shelter"	,lat:"	46.262	",long:"-63.152303	",sort:	50	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Marks Work Warehouse"	,lat:"	46.26421	",long:"-63.1486	",sort:	51	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Charlottetown Mall Shelters"	,lat:"	46.265083	",long:"-63.145975	",sort:	52	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Mt. Edward & Ash"	,lat:"	46.26984	",long:" -63.1387	",sort:	53	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Ash & Gamwell"	,lat:"	46.27035	",long:" -63.137076000	",sort:	54	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Ash & Maple"	,lat:"	46.271249	",long:"-63.134428	",sort:	55	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Maple & Oak"	,lat:"	46.26801	",long:"-63.132182	",sort:	56	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Oak & Ingswood"	,lat:"	46.2687	",long:"-63.129359	",sort:	57	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Oak & Brackley Point"	,lat:"	46.26957	",long:"-63.127066	",sort:	58	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Oak & Heather"	,lat:"	46.269925	",long:"-63.125839	",sort:	59	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Oak & Roger"	,lat:"	46.27051	",long:"-63.12391	",sort:	60	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Oak & Doncaster"	,lat:"	46.271117	",long:"-63.122	",sort:	61	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Oak & Barbour"	,lat:"	46.27118	",long:"-63.119748	",sort:	62	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Norwood & Friar"	,lat:"	46.275397	",long:"-63.118964	",sort:	63	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Robin & Scarlett"	,lat:"	46.27311	",long:"-63.118831	",sort:	64	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Scarlett & Norwood"	,lat:"	46.2733829	",long:"-63.11744	",sort:	65	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Norwood & Elena"	,lat:"	46.27167	",long:"-63.114842	",sort:	66	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Norwood & St. Peters"	,lat:"	46.270275	",long:"-63.1127	",sort:	67	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Northridge & Andrews"	,lat:"	46.269144	",long:"-63.11002	",sort:	68	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Northridge & Westcomb"	,lat:"	46.267	",long:"-63.107036	",sort:	69	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Westridge & Westcomb"	,lat:"	46.264994	",long:"-63.10921	",sort:	70	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Westridge & Patterson"	,lat:"	46.264233	",long:"-63.107194	",sort:	71	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Patterson & South Gate"	,lat:"	46.26346	",long:"-63.1055	",sort:	72	,route_name:"2day",route_num:	2	)
+Board.create(name:	"St. Peters & Ralden"	,lat:"	46.267792	",long:" -63.11541	",sort:	73	,route_name:"2day",route_num:	2	)
+Board.create(name:	"St. Peters & Valdane"	,lat:"	46.2653	",long:"-63.11748	",sort:	74	,route_name:"2day",route_num:	2	)
+Board.create(name:	"St. Peters & Duncan"	,lat:"	46.2633	",long:"-63.118	",sort:	75	,route_name:"2day",route_num:	2	)
+Board.create(name:	"St. Peters & Ellis Bros"	,lat:"	 46.26061	",long:"-63.118853	",sort:	76	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Elmer Blanchard Building"	,lat:"	 46.259912	",long:"-63.11795	",sort:	77	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Gordon & Kensington"	,lat:"	46.259228	",long:"-63.11365	",sort:	78	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Kensington & Falconwood"	,lat:"	46.25834	",long:"-63.11371	",sort:	79	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Kensington & Woodward"	,lat:"	46.2551999	",long:"-63.115058	",sort:	80	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Kensington & Garfield"	,lat:"	46.253	",long:" -63.11549199	",sort:	81	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Kensington & St. Pius X"	,lat:"	46.251867	",long:" -63.116128	",sort:	82	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Kensington & Exhibition"	,lat:"	46.248847	",long:"-63.116875	",sort:	83	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Kensington & Linden"	,lat:"	46.247161	",long:"-63.117708	",sort:	84	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Linden & Second"	,lat:"	46.2474	",long:"-63.11993	",sort:	85	,route_name:"2day",route_num:	2	)
+Board.create(name:	"St. Peters Parkdale Pharmacy"	,lat:"	46.247891	",long:"-63.122828	",sort:	86	,route_name:"2day",route_num:	2	)
+Board.create(name:	"St. Peters & Shops of St. Avard"	,lat:"	46.24701	",long:"-63.123406	",sort:	87	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Longworth & Lapthorne"	,lat:"	46.244603	",long:"-63.12423	",sort:	88	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Longworth & Birchwood School"	,lat:"	46.24262199	",long:" -63.124906	",sort:	89	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Longworth & Champion"	,lat:"	46.24162	",long:"-63.1252189	",sort:	90	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Weymouth & Fitzroy"	,lat:"	46.24002	",long:"-63.12419199	",sort:	91	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Weymouth & College"	,lat:"	46.23868	",long:"-63.122506	",sort:	92	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Grafton & Chartlottown Conference Center"	,lat:"	 46.237719	",long:"-63.122722	",sort:	93	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Grafton & Poly Clinic"	,lat:"	46.2367	",long:"-63.1249719	",sort:	94	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Grafton & Veteran's Affairs"	,lat:"	46.235939	",long:"-63.12614	",sort:	95	,route_name:"2day",route_num:	2	)
+Board.create(name:	"Grafton & Holman Grand"	,lat:"	46.234909	",long:"-63.127472	",sort:	96	,route_name:"2day",route_num:	2	)

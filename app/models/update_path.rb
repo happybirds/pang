@@ -1,11 +1,14 @@
 class UpdatePath
 
   def self.update(routes,route_num,direction)
-
     boards  = Board.where(route_name: routes,route_num: route_num)
+    board_count = Board.where(route_name: routes,route_num: route_num).where.not(name: '')
 
-    board_count = Board.where(route_name: routes,route_num: route_num).where.not(name: '').last.sort
-
+    if board_count.size != 0
+      board_count = board_count.last.sort
+    else
+      board_count = 0
+    end
     @dir = 9
     # if routes == '1day'
     uri = URI(ENV[routes] )
@@ -15,7 +18,7 @@ class UpdatePath
     p '公交'
     p bus_infos.size
 
-    if bus_infos.size != 0  #有信号  
+    if bus_infos.size != 0  #有信号
         c = {}
         _nh = []
         _distance1 = []
@@ -28,7 +31,6 @@ class UpdatePath
         yy = ''
 
         $redis.set("distance_"+routes+"_" + "direction#{direction}_true",false)
-
         bus_infos.each_with_index do |n,index|
           h = []
           boards.each do |b|
@@ -112,20 +114,29 @@ class UpdatePath
         route1eveningdir1 =  $redis.get('route1eveningdir1')
         route1eveningdir2 =  $redis.get('route1eveningdir2')
 
+        route2daydir1 =  $redis.get('route2daydir1')
+        route3daydir1 =  $redis.get('route3daydir1')
+
         if routes == '1day'
           datas1 = route1daydir1
           datas2 = route1daydir2
         elsif routes == '1evening'
           datas1 = route1eveningdir1
           datas2 = route1eveningdir2
+        elsif routes == '2day'
+          datas1 = route2daydir1
+        elsif routes == '3day'
+          datas1 = route3daydir1
         end
+
+
         p "正面-----bus-------#{_num1.keys}"
         p "反面-----bus-------#{_num2.keys}"
-        if _num1.size == 0 
+        if _num1.size == 0
            $redis.del("distance_"+routes+"_" + "direction1")
 
          end
-         if _num2.size == 0 
+         if _num2.size == 0
            $redis.del("distance_"+routes+"_" + "direction2")
 
          end

@@ -1,10 +1,10 @@
 <div class="main">
       <div class='buttons'>
         <div class="button_route1s">
-        	<div class='button_route1d'> 
+        	<div class='button_route1d'>
         		<a  href="javascript: get_state(1)">MALL TO DT(route1 day)</a>
           		<a  href="javascript: get_state(2)">DT TO MALL(route1 day)</a>
-      		</div>	
+      		</div>
       	    <div class='button_route1e'>
       	    	<a  href="javascript: get_state(3)">MALL TO DT(route1 evening)</a>
           		<a  href="javascript: get_state(4)">DT TO MALL(route1 evening)</a>
@@ -14,7 +14,7 @@
       	    </div>
      		<div class='button_route3'>
       	    	<a  href="javascript: get_state(6)">route3</a>
-      	    </div>        
+      	    </div>
         </div>
 
       </div>
@@ -73,12 +73,12 @@
 			</div>
       	<div class="route3">
 				<!-- <p class='distance_show'> route 1 evening </p> -->
-				<ul class="route2day">
+				<ul class="route2daydir1">
 						<h4>Route 2 </h4>
             <span class='current'>current：<div class="distance_show"></div></span>
-					<% @route1eveningdir1.each do |board|%>
+					<% @route2daydir1.each do |board|%>
 					 <% next unless !board.name.blank? %>
-						<li  data-name="<%= board.name%>" name="route1eveningdir1">
+						<li  data-name="<%= board.name%>" name="route2daydir1">
 							 <span></span><span><%= board.name.split('_')[0]%></span>
 						</li>
 					<% end %>
@@ -88,12 +88,12 @@
 			</div>
 	    	<div class="route4">
 				<!-- <p class='distance_show'> route 1 evening </p> -->
-				<ul class="route3day">
+				<ul class="route3daydir1">
 						<h4>Route 3 </h4>
             <span class='current'>current：<div class="distance_show"></div></span>
-					<% @route1eveningdir1.each do |board|%>
+					<% @route3daydir1.each do |board|%>
 					 <% next unless !board.name.blank? %>
-						<li  data-name="<%= board.name%>" name="route1eveningdir1">
+						<li  data-name="<%= board.name%>" name="route3daydir1">
 							 <span></span><span><%= board.name.split('_')[0]%></span>
 						</li>
 					<% end %>
@@ -118,8 +118,8 @@ function get_state(s)
 		$('.route1daydir2').css('display','none')
 		$('.route1eveningdir1').css('display','none')
 		$('.route1eveningdir2').css('display','none')
-		$('.route2day').css('display','none')
-		$('.route3day').css('display','none')
+		$('.route2daydir1').css('display','none')
+		$('.route3daydir1').css('display','none')
 
 	}
 	if(s==2){
@@ -127,40 +127,40 @@ function get_state(s)
 		$('.route1daydir2').css('display','block')
 		$('.route1eveningdir1').css('display','none')
 		$('.route1eveningdir2').css('display','none')
-		$('.route2day').css('display','none')
-		$('.route3day').css('display','none')
+		$('.route2daydir1').css('display','none')
+		$('.route3daydir1').css('display','none')
 	}
 	if(s==3){
 		$('.route1daydir1').css('display','none')
 		$('.route1daydir2').css('display','none')
 		$('.route1eveningdir1').css('display','block')
 		$('.route1eveningdir2').css('display','none')
-		$('.route2day').css('display','none')
-		$('.route3day').css('display','none')
+		$('.route2daydir1').css('display','none')
+		$('.route3daydir1').css('display','none')
 	}
 	if(s==4){
 		$('.route1daydir1').css('display','none')
 		$('.route1daydir2').css('display','none')
 		$('.route1eveningdir1').css('display','none')
 		$('.route1eveningdir2').css('display','block')
-		$('.route2day').css('display','none')
-		$('.route3day').css('display','none')
+		$('.route2daydir1').css('display','none')
+		$('.route3daydir1').css('display','none')
 	}
 	if(s==5){
 		$('.route1daydir1').css('display','none')
 		$('.route1daydir2').css('display','none')
 		$('.route1eveningdir1').css('display','none')
 		$('.route1eveningdir2').css('display','none')
-		$('.route2day').css('display','block')
-		$('.route3day').css('display','none')
+		$('.route2daydir1').css('display','block')
+		$('.route3daydir1').css('display','none')
 	}
 	if(s==6){
 		$('.route1daydir1').css('display','none')
 		$('.route1daydir2').css('display','none')
 		$('.route1eveningdir1').css('display','none')
 		$('.route1eveningdir2').css('display','none')
-		$('.route2day').css('display','none')
-		$('.route3day').css('display','block')
+		$('.route2daydir1').css('display','none')
+		$('.route3daydir1').css('display','block')
 	}
 }
 // function route1daydir1(){
