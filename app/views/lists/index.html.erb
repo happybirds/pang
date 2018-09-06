@@ -2,11 +2,11 @@
 		<!-- <div class="banner">
 		</div> -->
 		<div class="schedule">
-			<!-- <h1>Schedule</h1> -->
+			<h4> <%=  Date.today%></h4>
 
 			<div class="alldate">
 				<div class="date1">
-					<span>周一</span>
+					<span>Mon(<%= Date.today.beginning_of_week(:monday).strftime("%d")%>)</span>
 						<% @schedules.where(date: 1).each do |s|%>
 						<ul style="border-color: <%= s.bgcolor %>">
 							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
@@ -17,7 +17,7 @@
 						<% end %>
 				</div>
 				<div class="date2">
-				<span>周二</span>
+				<span>TUE(<%= Date.today.beginning_of_week(:tuesday).strftime("%d")%>)</span>
 						<% @schedules.where(date: 2).each do |s|%>
 						<ul style="border-color: <%= s.bgcolor %>">
 							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
@@ -26,10 +26,10 @@
 							<li><%= s.classroom%></li>
 						</ul>
 						<% end %>
-					
+
 			 </div>
 				<div class="date3">
-				<span>周三</span>
+				<span>WED(<%= Date.today.beginning_of_week(:wednesday).strftime("%d")%>)</span>
 						<% @schedules.where(date: 3).each do |s|%>
 						<ul style="border-color: <%= s.bgcolor %>">
 							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
@@ -40,7 +40,7 @@
 						<% end %>
 					</div>
 				<div class="date4">
-				<span>周四</span>
+				<span>THU(<%= (Date.today.beginning_of_week(:thursday) ).strftime("%d")%>)</span>
 						<% @schedules.where(date: 4).each do |s|%>
 						<ul style="border-color: <%= s.bgcolor %>;margin-top: <%= s.margin %>px">
 							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
@@ -52,7 +52,7 @@
 
 					</div>
 				<div class="date5">
-				<span>周五</span>
+				<span>FRI(<%= (Date.today.beginning_of_week(:friday)+ 7.days).strftime("%d")%>)</span>
 						<% @schedules.where(date: 5).each do |s|%>
 						<ul style="border-color: <%= s.bgcolor %>">
 							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
@@ -61,7 +61,7 @@
 							<li><%= s.classroom%></li>
 						</ul>
 						<% end %>
-					
+
 			</div>
 
 		</div>

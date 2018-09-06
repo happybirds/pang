@@ -1,27 +1,97 @@
 @import common
 
 
+
 [class^='route']
-	padding: 20px
+	padding: 10px
 	display: flex
-	margin: 20px
-	border: 1px solid black
+	margin: 10px
+	// border: 1px solid black
 	justify-content: space-between
+	flex-wrap: wrap
 	.active
+		display: block
+		+size(30px)
 		color: red
+		background-image: url('https://www.nationalcarfacts.com/public/theme/v6/assets/images/search-car.png')
+		background-size: cover
+		position: relative
+
 	ul
 		display: flex
 		flex-direction: column
 		list-style: none
+		border: 1px solid black
+		.current
+			font-size: 12px
+			color: red
 		li
+			display: flex
 			span
 				font-size: 10px
 
 
 .main
+	.buttons
+		// display: flex
+		// justify-content: space-between
+		// flex-wrap: wrap
+		// font-size: 10px
+		.button_route1s
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			font-size: 10px
+			.button_route1d
+				
+				a
+					display: flex
+					justify-content: space-between
+					flex-wrap: wrap
+					background-color: #ffc25391
+					box-shadow: 0px 0px 35px rgba(black,0.1)
+					padding: 10px
+					margin: 10px
+					
+				
+			.button_route1e
+
+				a
+					display: flex
+					justify-content: space-between
+					flex-wrap: wrap
+					background-color: #ff535391
+					box-shadow: 0px 0px 35px rgba(black,0.1)
+					padding: 10px
+					margin: 10px
+					
+			.button_route2
+
+				a
+					display: flex
+					justify-content: space-between
+					flex-wrap: wrap
+					background-color: #c2d88dfc
+					box-shadow: 0px 0px 35px rgba(black,0.1)
+					padding: 10px
+					margin: 10px
+				
+			.button_route3
+
+				a
+					display: flex
+					justify-content: space-between
+					flex-wrap: wrap
+					background-color: #ae52f3a6
+					box-shadow: 0px 0px 35px rgba(black,0.1)
+					padding: 10px
+					margin: 10px
+									
+
 
 	.path
 		display: flex
 		justify-content: space-between
-		padding: 20px
-		margin: 20px
+		flex-wrap: wrap
+		// padding: 20px
+		// margin: 20px

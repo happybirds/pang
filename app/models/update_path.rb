@@ -8,206 +8,183 @@ class UpdatePath
 
     @dir = 9
     # if routes == '1day'
-      uri = URI(ENV[routes] )
-    # end
-      res = Net::HTTP.get(uri)
-      bus_infos =  JSON.parse res
-    c = {}
-    _nh = []
-    # _nh = []
-    _distance = []
+    uri = URI(ENV[routes] )
+  # end
+    res = Net::HTTP.get(uri)
+    bus_infos =  JSON.parse res
+    p '公交'
+    p bus_infos.size
 
-    _num = []
-
-      _num1 = {}
+    if bus_infos.size != 0  #有信号  
+        c = {}
+        _nh = []
+        _distance1 = []
+        _distance2 = []
+        _num = []
+        _num1 = {}
         _num2= {}
-    @finish_bus = []
+        @finish_bus = []
 
-    @is_true = false
+        yy = ''
 
+        $redis.set("distance_"+routes+"_" + "direction#{direction}_true",false)
 
-    yy = ''
+        bus_infos.each_with_index do |n,index|
+          h = []
+          boards.each do |b|
+            d =  Geocoder::Calculations.distance_between([n['lat'],n['long']], [b.lat,b.long])
 
-    $redis.set("distance_"+routes+"_" + "direction#{direction}_true",false)
-
-    bus_infos.each_with_index do |n,index|
-      h = []
-      # h = []
-      boards.each do |b|
-        d =  Geocoder::Calculations.distance_between([n['lat'],n['long']], [b.lat,b.long])
-
-        if !b.name.blank?
-          c[d] = b.name
-          c[b.name] = b.sort
-          h.push(d)
-        else
-          c[d] = b.reverse_name
-          c[b.reverse_name] = b.sort
-          h.push(d)
-        end
-
-      end
-
-      if h.sort[0] > 0.5
-        $redis.del(routes+"_" + "direction2_"+n['busNumber'])
-        $redis.del(routes+"_" + "direction1_"+n['busNumber'])
-        $redis.del(routes+"_" + "direction2_flag"+n['busNumber'])
-        $redis.del(routes+"_" + "direction1_flag"+n['busNumber'])
-        $redis.del(routes+"_" +n['busNumber'])
-        break
-      end
-      _nh.push(h.sort[0])
-      # _nh.push(h.sort[0])
-
-      _num.push(n['busNumber'])
-
-     if $redis.get(routes+"_" +n['busNumber'])
-
-
-        if  ($redis.get(routes+"_" + "direction1_flag"+n['busNumber']).to_i == 1) || ($redis.get(routes+"_" +n['busNumber']).to_i < c[c[_nh[index]]].to_i  && direction.to_i == 1)
-            # p c[c[_nh[index]]].to_i
-            _num1[n['busNumber']] = 1
-            _num2.delete(n['busNumber'])
-
-            @dir = 1
-            if($redis.get(routes+"_" +n['busNumber']).to_i == board_count )
-              # $redis.set(routes+"_"+n['busNumber'],board_count)
-              $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],1)
-              $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],0)
-              p '正面结束！！！！'
-              yy = '正面结束！！！！'
-              # $redis.set(routes+"_" + "direction1_"+n['busNumber'],c[_nh[index]])
-              # $redis.set(routes+"_" + "direction1_finish_"+@finish_bus,true)
-              break
-            end
-            # p '正面---start-----'
-            # p direction.to_i
-            # p "bus: ----#{n['busNumber']}----}"
-            # p $redis.get(routes+"_" +n['busNumber']).to_i
-            # p c[c[_nh[index]]].to_i
-            # p _nh[index]
-            # p c[_nh[index]]
-            # p '正面---over-----'
-
-
-
-
-            @dir = 1
-            $redis.set(routes+"_" + "direction1_"+n['busNumber'],c[_nh[index]])
-            $redis.del(routes+"_" + "direction2_"+n['busNumber'])
-            $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],1)
-            $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],0)
-            $redis.set(routes+"_"+n['busNumber'],c[c[_nh[index]]])
-         elsif   ($redis.get(routes+"_" + "direction2_flag"+n['busNumber']).to_i == 1) || ($redis.get(routes+"_" +n['busNumber']).to_i > c[c[_nh[index]]].to_i   && direction.to_i == 2)
-            # p board_re_name_count
-            # p $redis.get(routes+"_" +n['busNumber'])
-            @dir = 2
-
-            _num2[n['busNumber']] = 2
-            _num1.delete(n['busNumber'])
-
-            if($redis.get(routes+"_" +n['busNumber']).to_i == 1 )
-              # $redis.set(routes+"_"+n['busNumber'],1)
-              $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],0)
-              $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],1)
-              p '反面结束！！！！'
-              # $redis.set(routes+"_" + "direction2_"+n['busNumber'],c[_nh[index]])
-              yy = '反面结束！！！！'
-              break
+            if !b.name.blank?
+              c[d] = b.name
+              c[b.name] = b.sort
+              h.push(d)
+            else
+              c[d] = b.reverse_name
+              c[b.reverse_name] = b.sort
+              h.push(d)
             end
 
-
-            # p '反面--start-----'
-            # p direction.to_i
-            # p "bus: ----#{n['busNumber']}----}"
-            # p c[c[_nh[index]]].to_i
-            # p _nh[index]
-            # p c[_nh[index]]
-            # p '反面---over------'
-            #
-            # p c[c[_nh[index]]].to_i
-            # p _nh[index]
-            $redis.set(routes+"_" + "direction2_"+n['busNumber'],c[_nh[index]])
-            $redis.del(routes+"_" + "direction1_"+n['busNumber'])
-            $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],0)
-            $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],1)
-            $redis.set(routes+"_"+n['busNumber'],c[c[_nh[index]]])
-
-         end
-
-
-
-     else
-        $redis.set(routes+"_"+n['busNumber'],c[c[_nh[index]]])
-     end
-    end
-    # binding.pry
-    bus_num = []
-    route1daydir1 = JSON.parse $redis.get('route1daydir1')
-    route1daydir2 = JSON.parse $redis.get('route1daydir2')
-
-    _num.each do |n|
-      if !$redis.get(routes+"_" + "direction#{@dir}_"+n).blank?
-
-        bus_name = $redis.get(routes+"_" + "direction#{@dir}_"+n)
-p bus_name
-        if @dir == 1 && (route1daydir1.include? bus_name)
-          p _num1[n]
-          if _num1[n]
-            if boards.first.name == bus_name
-              @finish_bus.push(bus_name.split('_')[0]+","+n)
-            end
-              _distance.push(bus_name.split('_')[0] +","+n)
-
-           $redis.set("distance_"+routes+"_" + "direction#{direction}_true",true)
-         end
-        end
-
-        if @dir == 2 && (route1daydir2.include? bus_name)
-          p _num2[n]
-  if _num2[n]
-          if boards.first.reverse_name == bus_name
-            @finish_bus.push(bus_name.split('_')[0]+","+n)
           end
-            _distance.push(bus_name.split('_')[0] +","+n)
 
-          $redis.set("distance_"+routes+"_" + "direction#{direction}_true",true)
-end
+          if h.sort[0] > 0.5
+            $redis.del(routes+"_" + "direction2_"+n['busNumber'])
+            $redis.del(routes+"_" + "direction1_"+n['busNumber'])
+            $redis.del(routes+"_" + "direction2_flag"+n['busNumber'])
+            $redis.del(routes+"_" + "direction1_flag"+n['busNumber'])
+            $redis.del(routes+"_" +n['busNumber'])
+            break
+          end
+          _nh.push(h.sort[0])
+          # _nh.push(h.sort[0])
+
+          _num.push(n['busNumber'])
+
+         if $redis.get(routes+"_" +n['busNumber'])
+
+
+            if  ($redis.get(routes+"_" + "direction1_flag"+n['busNumber']).to_i == 1) || ($redis.get(routes+"_" +n['busNumber']).to_i < c[c[_nh[index]]].to_i  && direction.to_i == 1)
+                # p c[c[_nh[index]]].to_i
+                _num1[n['busNumber']] = n['busNumber']
+                _num2.delete(n['busNumber'])
+
+                @dir = 1
+                if($redis.get(routes+"_" +n['busNumber']).to_i == board_count )
+                  # $redis.set(routes+"_"+n['busNumber'],board_count)
+                  $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],1)
+                  $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],0)
+                  p '正面结束！！！！'
+                  yy = '正面结束！！！！'
+                  break
+                end
+
+                $redis.set(routes+"_" + "direction1_"+n['busNumber'],c[_nh[index]])
+                $redis.del(routes+"_" + "direction2_"+n['busNumber'])
+                $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],1)
+                $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],0)
+                $redis.set(routes+"_"+n['busNumber'],c[c[_nh[index]]])
+             elsif   ($redis.get(routes+"_" + "direction2_flag"+n['busNumber']).to_i == 1) || ($redis.get(routes+"_" +n['busNumber']).to_i > c[c[_nh[index]]].to_i   && direction.to_i == 2)
+                @dir = 2
+                _num2[n['busNumber']] = n['busNumber']
+                _num1.delete(n['busNumber'])
+                if($redis.get(routes+"_" +n['busNumber']).to_i == 1 )
+                  # $redis.set(routes+"_"+n['busNumber'],1)
+                  $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],0)
+                  $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],1)
+                  p '反面结束！！！！'
+                  yy = '反面结束！！！！'
+                  break
+                end
+
+                $redis.set(routes+"_" + "direction2_"+n['busNumber'],c[_nh[index]])
+                $redis.del(routes+"_" + "direction1_"+n['busNumber'])
+                $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],0)
+                $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],1)
+                $redis.set(routes+"_"+n['busNumber'],c[c[_nh[index]]])
+
+             end
+
+         else
+            $redis.set(routes+"_"+n['busNumber'],c[c[_nh[index]]])
+         end
+        end
+        route1daydir1 =  $redis.get('route1daydir1')
+        route1daydir2 =  $redis.get('route1daydir2')
+        route1eveningdir1 =  $redis.get('route1eveningdir1')
+        route1eveningdir2 =  $redis.get('route1eveningdir2')
+
+        if routes == '1day'
+          datas1 = route1daydir1
+          datas2 = route1daydir2
+        elsif routes == '1evening'
+          datas1 = route1eveningdir1
+          datas2 = route1eveningdir2
+        end
+        p "正面-----bus-------#{_num1.keys}"
+        p "反面-----bus-------#{_num2.keys}"
+        if _num1.size == 0 
+           $redis.del("distance_"+routes+"_" + "direction1")
+
+         end
+         if _num2.size == 0 
+           $redis.del("distance_"+routes+"_" + "direction2")
+
+         end
+
+         $redis.set("prev_distance_"+routes+"_" + "direction#{direction}",nil)
+
+        _num1.keys.each do |n|
+            bus_name = $redis.get(routes+"_" + "direction1_"+n)
+            if  (datas1.include? bus_name)
+                  _distance1.push(bus_name.split('_')[0] +","+n)
+                 $redis.set("prev_distance_"+routes+"_" + "direction1"+","+n,bus_name.split('_')[0] +","+n)
+
+                 $redis.set("distance_"+routes+"_" + "direction#{direction}_true",true)
+
+                if boards.first.name == bus_name
+                  @finish_bus.push(bus_name.split('_')[0]+","+n)
+
+                end
+              else
+                p '上一次正面'
+                p   $redis.get("prev_distance_"+routes+"_" + "direction1"+","+n)
+                 _distance1.push($redis.get("prev_distance_"+routes+"_" + "direction1"+","+n))
+            end
+      end
+      _num2.keys.each do |n|
+          bus_name = $redis.get(routes+"_" + "direction2_"+n)
+            if  (datas2.include? bus_name)
+                _distance2.push(bus_name.split('_')[0] +","+n)
+
+                $redis.set("prev_distance_"+routes+"_" + "direction2"+","+n,bus_name.split('_')[0] +","+n)
+
+               $redis.set("distance_"+routes+"_" + "direction#{direction}_true",true)
+                if boards.first.reverse_name == bus_name
+                  @finish_bus.push(bus_name.split('_')[0]+","+n)
+                   $redis.set("prev_distance_"+routes+"_" + "direction#{direction}"+","+n,'无反面第一个')
+                end
+            else
+              p '上一次反面'
+              p   $redis.get("prev_distance_"+routes+"_" + "direction2"+","+n)
+             _distance2.push($redis.get("prev_distance_"+routes+"_" + "direction2"+","+n))
+            end
+       end
+
+           p "正面----#{_distance1}"
+           p "反面-----#{_distance2}"
+        if @dir == 1
+             $redis.set("distance_"+routes+"_" + "direction1",_distance1)
         end
 
-          bus_num.push(n)
+        if @dir == 2
+             $redis.set("distance_"+routes+"_" + "direction2",_distance2)
+        end
+        $redis.set("no_sign_" + routes,false)
 
-      end
+    else
+      @dir = 0
+      $redis.set("no_sign_" + routes,true)
 
     end
-    @bus_num = bus_num
-    @distance =  _distance
-
-#      p '显示的距离===start===='
-#      p @distance
-#      p @finish_bus
-# p direction
-# distance_1day_direction2_finish
-
-  $redis.set("distance_"+routes+"_" + "direction1_finish",nil)
-  $redis.set("distance_"+routes+"_" + "direction2_finish",nil)
-    if @dir == 1
-         $redis.set("distance_"+routes+"_" + "direction1",@distance)
-        # $redis.set("distance_"+routes+"_" + "direction1_finish",@finish_bus)
-    end
-
-    if @dir == 2
-         $redis.set("distance_"+routes+"_" + "direction2",@distance)
-          # $redis.set("distance_"+routes+"_" + "direction2_finish",@finish_bus)
-    end
-     # p '=====end ==='
-     p 111111
-     p  JSON.parse $redis.get("distance_"+routes+"_" + "direction1")
-      p '=====end ==='
-     p 222222
-p  JSON.parse $redis.get("distance_"+routes+"_" + "direction2")
- p '=====end ==='
- p yy
   end
 
 end

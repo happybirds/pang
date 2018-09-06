@@ -55,7 +55,6 @@ gem 'devise'
 
 gem "nested_form", '0.3.2'
 
-
 gem 'redis'
 gem 'redis-namespace'
 

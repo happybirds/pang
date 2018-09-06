@@ -15,8 +15,8 @@
 #
 
 
-# Crono.perform(Route1daydir1Job).every 10.seconds
-# Crono.perform(Route1daydir2Job).every 10.seconds
+Crono.perform(Route1daydir1Job).every 5.seconds
+Crono.perform(Route1daydir2Job).every 5.seconds
 
-Crono.perform(Route1eveningdir1Job).every 10.seconds
-Crono.perform(Route1eveningdir2Job).every 10.seconds
+# Crono.perform(Route1eveningdir1Job).every 5.seconds
+# Crono.perform(Route1eveningdir2Job).every 5.seconds
