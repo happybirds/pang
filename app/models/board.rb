@@ -1,4 +1,11 @@
 class Board < ApplicationRecord
-	has_many :board_routes
-	has_many :routes,through: :board_routes
+
+	enum route_num:{
+		'1day':1,
+		'2day':2,
+		'3day':3,
+		'1evening':12
+	}
+
+
 end

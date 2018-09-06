@@ -51,5 +51,25 @@
         </ul>
       </li>
 
+      <li class="nav-item">
+        <a href="javascript:;" class="nav-link nav-toggle" id="boards_link">
+          <i class=" icon-note"></i>
+          <span class="title">站牌管理</span>
+          <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+          <li class="nav-item" id="boards">
+              <a href="<%= admin_boards_path %>" class="nav-link nav-toggle">
+                <i class="icon-settings"></i> 列表
+              </a>
+            </li>
+            <li class="nav-item" id="new_board">
+              <a href="<%= new_admin_board_path %>" class="nav-link nav-toggle">
+                <i class="icon-settings"></i> 发布
+              </a>
+            </li>
+
+        </ul>
+      </li>
   </ul>
 </div>

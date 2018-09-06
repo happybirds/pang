@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 	    root 'home#index'
 	    resources :articles
   	  resources :schedules
+      resources :boards
 	 end
 
 end

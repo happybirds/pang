@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet light portlet-fit portlet-form bordered">
+      <div class="portlet-title">
+        <div class="caption">
+            <span class="caption-subject font-green sbold uppercase">发布</span>
+        </div>
+      </div>
+      <div class="portlet-body">
+        <%= render 'form' %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  $("#new_new").addClass("active");
+  $("#new_new").parents(".nav-item").addClass("active open")
+  $("#news_link").append("<span class='selected'></span>")
+</script>
