@@ -2,68 +2,23 @@
 		<!-- <div class="banner">
 		</div> -->
 		<div class="schedule">
-			<h4> <%=  Date.today%></h4>
+			<h4> <%= "#{Date.today.strftime("%Y/%m/%d, %a")}，#{Date.today.strftime('%Y')}的第#{Date.today.strftime('%j')}天" %></h4>
 
 			<div class="alldate">
-				<div class="date1">
-					<span>Mon(<%= Date.today.beginning_of_week(:monday).strftime("%d")%>)</span>
-						<% @schedules.where(date: 1).each do |s|%>
-						<ul style="border-color: <%= s.bgcolor %>">
-							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
-							<li><%= s.title%></li>
-							<li><%= s.address%></li>
-							<li><%= s.classroom%></li>
-						</ul>
-						<% end %>
-				</div>
-				<div class="date2">
-				<span>TUE(<%= Date.today.beginning_of_week(:tuesday).strftime("%d")%>)</span>
-						<% @schedules.where(date: 2).each do |s|%>
-						<ul style="border-color: <%= s.bgcolor %>">
-							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
-							<li><%= s.title%></li>
-							<li><%= s.address%></li>
-							<li><%= s.classroom%></li>
-						</ul>
-						<% end %>
-
-			 </div>
-				<div class="date3">
-				<span>WED(<%= Date.today.beginning_of_week(:wednesday).strftime("%d")%>)</span>
-						<% @schedules.where(date: 3).each do |s|%>
-						<ul style="border-color: <%= s.bgcolor %>">
-							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
-							<li><%= s.title%></li>
-							<li><%= s.address%></li>
-							<li><%= s.classroom%></li>
-						</ul>
-						<% end %>
-					</div>
-				<div class="date4">
-				<span>THU(<%= (Date.today.beginning_of_week(:thursday) ).strftime("%d")%>)</span>
-						<% @schedules.where(date: 4).each do |s|%>
-						<ul style="border-color: <%= s.bgcolor %>;margin-top: <%= s.margin %>px">
-							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
-							<li><%= s.title%></li>
-							<li><%= s.address%></li>
-							<li><%= s.classroom%></li>
-						</ul>
-						<% end %>
+			<% 1..5.times do |i| %>
+						<div class="date<%= i+1 %>">
+						<span><%= changeW(i+1) %></span>
+								<% @schedules.where(date: i+1).each do |s|%>
+									<ul style="border-color: <%= s.bgcolor %>;margin-top: <%= s.margin %>px">
+									<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
+									<li><%= s.title%></li>
+									<li><%= s.address%></li>
+									<li><%= s.classroom%></li>
+								</ul>
+								<% end %>
 
 					</div>
-				<div class="date5">
-				<span>FRI(<%= (Date.today.beginning_of_week(:friday)+ 7.days).strftime("%d")%>)</span>
-						<% @schedules.where(date: 5).each do |s|%>
-						<ul style="border-color: <%= s.bgcolor %>">
-							<li style="background-color: <%= s.bgcolor %>"><%= s.start%>-<%= s.end %></li>
-							<li><%= s.title%></li>
-							<li><%= s.address%></li>
-							<li><%= s.classroom%></li>
-						</ul>
-						<% end %>
-
-			</div>
-
+			<% end %>
 		</div>
 		</div>
     <div class="path">

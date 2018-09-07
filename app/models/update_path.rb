@@ -60,25 +60,35 @@ class UpdatePath
           # _nh.push(h.sort[0])
 
           _num.push(n['busNumber'])
-
+# p $redis.get(routes+"_" +n['busNumber'])
+# p $redis.get(routes+"_" + "direction1_flag"+n['busNumber']).to_i 
+# p route_num == 3
+# p $redis.get(routes+"_" +n['busNumber']).to_i == board_count
          if $redis.get(routes+"_" +n['busNumber'])
-
+p 333333
 
             if  ($redis.get(routes+"_" + "direction1_flag"+n['busNumber']).to_i == 1) || ($redis.get(routes+"_" +n['busNumber']).to_i < c[c[_nh[index]]].to_i  && direction.to_i == 1)
                 # p c[c[_nh[index]]].to_i
                 _num1[n['busNumber']] = n['busNumber']
                 _num2.delete(n['busNumber'])
-
+p 22222
                 @dir = 1
                 if($redis.get(routes+"_" +n['busNumber']).to_i == board_count )
+
+                  if route_num == 2 || route_num ==3
+                     $redis.set(routes+"_" +n['busNumber'] ,1)
+                     $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],1)
+                  else
+                    $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],1)
+                    $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],0)
+                  end
                   # $redis.set(routes+"_"+n['busNumber'],board_count)
-                  $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],1)
-                  $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],0)
+               
                   p '正面结束！！！！'
                   yy = '正面结束！！！！'
                   break
                 end
-
+p 11111111
                 $redis.set(routes+"_" + "direction1_"+n['busNumber'],c[_nh[index]])
                 $redis.del(routes+"_" + "direction2_"+n['busNumber'])
                 $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],1)

@@ -92,4 +92,3 @@ Board.create(name:	"Brighton & Rochford",lat:"	46.23464	",long:"	-63.133967	",so
 Board.create(name:	"Shaw Building Rochford",lat:"	46.23341	",long:"	-63.132349	",sort:	92	,route_name:"3day",route_num:	3	)
 Board.create(name:	"Rochford & Grafton",lat:"	46.23253	",long:"	-63.131226	",sort:	93	,route_name:"3day",route_num:	3	)
 Board.create(name:	"Grafton & Pownal",lat:"	46.2334	",long:"	-63.129629	",sort:	94	,route_name:"3day",route_num:	3	)
-Board.create(name:	"Grafton & Confederation Center",lat:"	46.234829	",long:"	-63.127284	",sort:	95	,route_name:"3day",route_num:	3	)
