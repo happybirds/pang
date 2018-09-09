@@ -20,86 +20,6 @@
       </div>
       <div class="path">
 
-      	<div class="route1 ">
-				<!-- <p class='distance_show'> route 1day </p> -->
-				<ul class="route1daydir1">
-						<h4>MALL TO DT(route1 day) </h4>
-            <!-- <span>已经进站：<div class="distance_show_finish"></div></span> -->
-						 <span class='current'>current：<div class="distance_show"></div></span>
-					<% @route1daydir1.each do |board|%>
-					 <% next unless !board.name.blank? %>
-						<li  data-name="<%= board.name%>" name="route1daydir1">
-							  <span></span><span><%= board.name.split('_')[0]%></span>
-						</li>
-					<% end %>
-				</ul>
-				<ul class="route1daydir2">
-						<h4>DT TO MALL(route1 day)</h4>
-            <!-- <span>已经进站：<div class="distance_show_finish"></div></span> -->
-            <span class='current'>current：<div class="distance_show"></div></span>
-					<% @route1daydir2.each do |board|%>
-					 <% next unless !board.reverse_name.blank?  %>
-						<li  data-name="<%= board.reverse_name.split('_')[0] %>" name="route1daydir2">
-							 <span></span><span><%= board.reverse_name.split('_')[0]%></span>
-						</li>
-					<% end %>
-				</ul>
-
-			</div>
-
-      	<div class="route2">
-				<!-- <p class='distance_show'> route 1 evening </p> -->
-				<ul class="route1eveningdir1">
-						<h4>MALL TO DT(route1 evening) </h4>
-            <span class='current'>current：<div class="distance_show"></div></span>
-					<% @route1eveningdir1.each do |board|%>
-					 <% next unless !board.name.blank? %>
-						<li  data-name="<%= board.name%>" name="route1eveningdir1">
-							 <span></span><span><%= board.name.split('_')[0]%></span>
-						</li>
-					<% end %>
-				</ul>
-					<ul class="route1eveningdir2">
-						<h4>DT TO MALL(route1 evening)</h4>
-            <span class='current'>current：<div class="distance_show"></div></span>
-					<% @route1eveningdir2.each do |board|%>
-					 <% next unless !board.reverse_name.blank?  %>
-						<li  data-name="<%= board.reverse_name.split('_')[0] %>" name="route1eveningdir2">
-							 <span></span><span><%= board.reverse_name.split('_')[0]%></span>
-						</li>
-					<% end %>
-				</ul>
-
-			</div>
-      	<div class="route3">
-				<!-- <p class='distance_show'> route 1 evening </p> -->
-				<ul class="route2daydir1">
-						<h4>Route 2 </h4>
-            <span class='current'>current：<div class="distance_show"></div></span>
-					<% @route2daydir1.each do |board|%>
-					 <% next unless !board.name.blank? %>
-						<li  data-name="<%= board.name%>" name="route2daydir1">
-							 <span></span><span><%= board.name.split('_')[0]%></span>
-						</li>
-					<% end %>
-				</ul>
-
-
-			</div>
-	    	<div class="route4">
-				<!-- <p class='distance_show'> route 1 evening </p> -->
-				<ul class="route3daydir1">
-						<h4>Route 3 </h4>
-            <span class='current'>current：<div class="distance_show"></div></span>
-					<% @route3daydir1.each do |board|%>
-					 <% next unless !board.name.blank? %>
-						<li  data-name="<%= board.name%>" name="route3daydir1">
-							 <span></span><span><%= board.name.split('_')[0]%></span>
-						</li>
-					<% end %>
-				</ul>
-
-			</div>
       </div>
 
 </div>
@@ -110,59 +30,64 @@ function route(){
 	$.rails.handleRemote($('<a>', { href: "<%= distance_path%>", 'data-method': 'get'}));
 }
 
-
-function get_state(s)
-{
-	if(s==1){
-		$('.route1daydir1').css('display','block')
-		$('.route1daydir2').css('display','none')
-		$('.route1eveningdir1').css('display','none')
-		$('.route1eveningdir2').css('display','none')
-		$('.route2daydir1').css('display','none')
-		$('.route3daydir1').css('display','none')
-
-	}
-	if(s==2){
-		$('.route1daydir1').css('display','none')
-		$('.route1daydir2').css('display','block')
-		$('.route1eveningdir1').css('display','none')
-		$('.route1eveningdir2').css('display','none')
-		$('.route2daydir1').css('display','none')
-		$('.route3daydir1').css('display','none')
-	}
-	if(s==3){
-		$('.route1daydir1').css('display','none')
-		$('.route1daydir2').css('display','none')
-		$('.route1eveningdir1').css('display','block')
-		$('.route1eveningdir2').css('display','none')
-		$('.route2daydir1').css('display','none')
-		$('.route3daydir1').css('display','none')
-	}
-	if(s==4){
-		$('.route1daydir1').css('display','none')
-		$('.route1daydir2').css('display','none')
-		$('.route1eveningdir1').css('display','none')
-		$('.route1eveningdir2').css('display','block')
-		$('.route2daydir1').css('display','none')
-		$('.route3daydir1').css('display','none')
-	}
-	if(s==5){
-		$('.route1daydir1').css('display','none')
-		$('.route1daydir2').css('display','none')
-		$('.route1eveningdir1').css('display','none')
-		$('.route1eveningdir2').css('display','none')
-		$('.route2daydir1').css('display','block')
-		$('.route3daydir1').css('display','none')
-	}
-	if(s==6){
-		$('.route1daydir1').css('display','none')
-		$('.route1daydir2').css('display','none')
-		$('.route1eveningdir1').css('display','none')
-		$('.route1eveningdir2').css('display','none')
-		$('.route2daydir1').css('display','none')
-		$('.route3daydir1').css('display','block')
-	}
+function get_state(s){
+	$.rails.handleRemote($('<a>', { href: "<%= change_path%>?num="+s, 'data-method': 'get'}));
 }
+
+// function get_state(s)
+// {
+// 	if(s==1){
+// 		$('.route1daydir1').css('display','block')
+// 		$('.route1daydir2').css('display','none')
+// 		$('.route1eveningdir1').css('display','none')
+// 		$('.route1eveningdir2').css('display','none')
+// 		$('.route2daydir1').css('display','none')
+// 		$('.route3daydir1').css('display','none')
+//
+// 	}
+// 	if(s==2){
+// 		$('.route1daydir1').css('display','none')
+// 		$('.route1daydir2').css('display','block')
+// 		$('.route1eveningdir1').css('display','none')
+// 		$('.route1eveningdir2').css('display','none')
+// 		$('.route2daydir1').css('display','none')
+// 		$('.route3daydir1').css('display','none')
+// 	}
+// 	if(s==3){
+// 		$('.route1daydir1').css('display','none')
+// 		$('.route1daydir2').css('display','none')
+// 		$('.route1eveningdir1').css('display','block')
+// 		$('.route1eveningdir2').css('display','none')
+// 		$('.route2daydir1').css('display','none')
+// 		$('.route3daydir1').css('display','none')
+// 	}
+// 	if(s==4){
+// 		$('.route1daydir1').css('display','none')
+// 		$('.route1daydir2').css('display','none')
+// 		$('.route1eveningdir1').css('display','none')
+// 		$('.route1eveningdir2').css('display','block')
+// 		$('.route2daydir1').css('display','none')
+// 		$('.route3daydir1').css('display','none')
+// 	}
+// 	if(s==5){
+// 		$('.route1daydir1').css('display','none')
+// 		$('.route1daydir2').css('display','none')
+// 		$('.route1eveningdir1').css('display','none')
+// 		$('.route1eveningdir2').css('display','none')
+// 		$('.route2daydir1').css('display','block')
+// 		$('.route3daydir1').css('display','none')
+// 	}
+// 	if(s==6){
+// 		$('.route1daydir1').css('display','none')
+// 		$('.route1daydir2').css('display','none')
+// 		$('.route1eveningdir1').css('display','none')
+// 		$('.route1eveningdir2').css('display','none')
+// 		$('.route2daydir1').css('display','none')
+// 		$('.route3daydir1').css('display','block')
+// 	}
+// }
+
+
 // function route1daydir1(){
 // 	$.rails.handleRemote($('<a>', { href: "<%= distance_path%>?routes=1day&direction=1&route_num=1", 'data-method': 'get'}));
 // }

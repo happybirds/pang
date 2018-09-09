@@ -1,19 +1,21 @@
 @import common
 
-
+.disabled
+	color: black
 
 [class^='route']
 	padding: 10px
 	display: flex
 	margin: 10px
 	// border: 1px solid black
-	justify-content: space-between
-	flex-wrap: wrap
+	// justify-content: space-between
+	// flex-wrap: wrap
+	width: 100%
 	.active
 		display: block
 		+size(30px)
 		color: red
-		background-image: url('https://www.nationalcarfacts.com/public/theme/v6/assets/images/search-car.png')
+		background-image:  url(asset-path('car.png'))
 		background-size: cover
 		position: relative
 	.color_red
@@ -25,12 +27,16 @@
 		list-style: none
 		border: 1px solid black
 		.current
-			font-size: 12px
+			font-size: 10px
 			color: red
 		li
 			display: flex
+			padding: 10px
 			span
-				font-size: 10px
+				font-size: 12px
+
+
+
 
 
 .main

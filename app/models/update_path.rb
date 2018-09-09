@@ -15,6 +15,7 @@ class UpdatePath
   # end
     res = Net::HTTP.get(uri)
     bus_infos =  JSON.parse res
+    p uri
     p '公交'
     p bus_infos.size
 
@@ -61,7 +62,7 @@ class UpdatePath
 
           _num.push(n['busNumber'])
 # p $redis.get(routes+"_" +n['busNumber'])
-# p $redis.get(routes+"_" + "direction1_flag"+n['busNumber']).to_i 
+# p $redis.get(routes+"_" + "direction1_flag"+n['busNumber']).to_i
 # p route_num == 3
 # p $redis.get(routes+"_" +n['busNumber']).to_i == board_count
          if $redis.get(routes+"_" +n['busNumber'])
@@ -83,7 +84,7 @@ p 22222
                     $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],0)
                   end
                   # $redis.set(routes+"_"+n['busNumber'],board_count)
-               
+
                   p '正面结束！！！！'
                   yy = '正面结束！！！！'
                   break
@@ -199,11 +200,11 @@ p 11111111
         if @dir == 2
              $redis.set("distance_"+routes+"_" + "direction2",_distance2)
         end
-        $redis.set("no_sign_" + routes,false)
+        $redis.set("no_sign_" + routes,true)
 
     else
       @dir = 0
-      $redis.set("no_sign_" + routes,true)
+      $redis.set("no_sign_" + routes,false)
 
     end
   end

@@ -8,6 +8,29 @@ class PathsController < ApplicationController
 		@route3daydir1 = Board.where(route_name: '3day',route_num: 3)
 	end
 
+	def change
+		 if params[:num].to_i == 1
+			 @routes = Board.where(route_name: '1day',route_num: 1)
+			 @class_name = 'route1daydir1'
+		 elsif params[:num].to_i == 2
+			 @routes = Board.where(route_name: '1day',route_num: 1).order('sort desc')
+			 @class_name = 'route1daydir2'
+		 elsif params[:num].to_i == 3
+			 @routes = Board.where(route_name: '1evening',route_num: 12)
+			 @class_name = 'route1eveningdir1'
+		 elsif params[:num].to_i == 4
+			 @routes = Board.where(route_name: '1evening',route_num: 12).order('sort desc')
+			 @class_name = 'route1eveningdir2'
+		 elsif params[:num].to_i == 5
+			 @routes = Board.where(route_name: '2day',route_num: 2)
+			 @class_name = 'route2daydir1'
+		 elsif params[:num].to_i == 6
+			 @routes = Board.where(route_name: '3day',route_num: 3)
+			 @class_name = 'route3daydir1'
+		 end
+
+	end
+
 	 def distance
      @distance_1day_direction1 =  $redis.get("distance_1day_direction1") || []
 		 @distance_1day_direction1_true =  $redis.get("distance_1day_direction1_true")|| []
