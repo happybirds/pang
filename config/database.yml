@@ -1,15 +1,19 @@
-# default: &default
-#   adapter: mysql2
-#   encoding: utf8
-#   pool: 15
-#   username: "<%= ENV['DB_USERNAME']%>"
-#   password: "<%= ENV['DB_PASSWORD']%>"
-#   variables:
-#     sql_mode: TRADITIONAL
-#
-# development:
-#   <<: *default
-#   database: pang
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 15
+  username: "<%= ENV['DB_USERNAME']%>"
+  password: "<%= ENV['DB_PASSWORD']%>"
+  variables:
+    sql_mode: TRADITIONAL
+
+development:
+  <<: *default
+  database: pang
+
+production:
+  <<: *default
+  database: pang
 #
 # # Warning: The database defined as "test" will be erased and
 # # re-generated from your development database when you run "rake".
@@ -34,18 +38,18 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
-
-development:
-  <<: *default
-  database: my_app_development
-
-production:
-  url:  <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+#
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   # For details on connection pooling, see rails configuration guide
+#   # http://guides.rubyonrails.org/configuring.html#database-pooling
+#   pool: 5
+#
+# development:
+#   <<: *default
+#   database: my_app_development
+#
+# production:
+#   url:  <%= ENV["DATABASE_URL"] %>
+#   pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
