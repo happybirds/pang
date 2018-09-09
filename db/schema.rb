@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2018_09_05_155634) do
 
-  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "name"
     t.string "encrypted_password", default: "", null: false
@@ -25,18 +28,18 @@ ActiveRecord::Schema.define(version: 2018_09_05_155634) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "articles", force: :cascade do |t|
     t.string "title"
     t.integer "catalog"
     t.string "icon"
-    t.text "content", limit: 4294967295
+    t.text "content"
     t.integer "admin_id"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "boards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "boards", force: :cascade do |t|
     t.string "name"
     t.string "reverse_name"
     t.float "lat"
@@ -49,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_09_05_155634) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "buses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "buses", force: :cascade do |t|
     t.string "bus_number"
     t.string "route_number"
     t.float "lat"
@@ -66,9 +69,9 @@ ActiveRecord::Schema.define(version: 2018_09_05_155634) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "crono_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "crono_jobs", force: :cascade do |t|
     t.string "job_id", null: false
-    t.text "log", limit: 4294967295
+    t.text "log"
     t.datetime "last_performed_at"
     t.boolean "healthy"
     t.datetime "created_at", null: false
@@ -76,7 +79,7 @@ ActiveRecord::Schema.define(version: 2018_09_05_155634) do
     t.index ["job_id"], name: "index_crono_jobs_on_job_id", unique: true
   end
 
-  create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "schedules", force: :cascade do |t|
     t.string "title"
     t.string "bgcolor"
     t.string "margin"

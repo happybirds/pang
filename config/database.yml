@@ -35,13 +35,17 @@
 # gem 'pg'
 #
 
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
 development:
-    host: 127.0.0.1
-    username: chris
-    adapter: postgresql
-    database: todos_dev
-    encoding: unicode
+  <<: *default
+  database: my_app_development
 
 production:
-    url: <%= ENV["DATABASE_URL"] %>
-    pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+  <<: *default
+  database: my_app

@@ -4,10 +4,10 @@ class CreateArticles < ActiveRecord::Migration[5.2]
 			t.string :title
 			t.integer :catalog
 			t.string :icon
-			t.longtext :content
+			t.text :content
 			t.integer :admin_id
 			t.integer :status
-			
+
       t.timestamps
     end
   end
