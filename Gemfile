@@ -55,8 +55,8 @@ gem 'daemons'
 gem 'devise'
 
 gem "nested_form", '0.3.2'
-gem 'haml'
-gem 'sinatra', require: nil
+# gem 'haml'
+# gem 'sinatra', require: nil
 
 gem 'redis'
 gem 'redis-namespace'
