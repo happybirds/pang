@@ -1,4 +1,4 @@
-class Admin::SessionsController < Admin::Devise::SessionsController
+class Admin::SessionsController < Devise::SessionsController
 
   def resource_name
     :admin

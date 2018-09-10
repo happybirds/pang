@@ -55,6 +55,8 @@ gem 'daemons'
 gem 'devise'
 
 gem "nested_form", '0.3.2'
+gem 'haml'
+gem 'sinatra', require: nil
 
 gem 'redis'
 gem 'redis-namespace'
@@ -74,9 +76,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry'
-  gem 'dotenv-rails'
-end
 
+end
+gem 'dotenv-rails'
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
@@ -90,4 +92,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 # gem 'pg'
-gem 'rails_12factor', group: :production
+# gem 'rails_12factor', group: :production
