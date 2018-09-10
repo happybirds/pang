@@ -18,19 +18,19 @@ module ApplicationHelper
   def get_name(s)
 
     if s =='route1daydir1'
-      w = 'MALL TO DT(route1 day)'
+      w = 'MALL TO DT(R1 day)'
     elsif s== 'route1daydir2'
-      w = 'DT TO MALL(route1 day)'
+      w = 'DT TO MALL(R1 day)'
     elsif s== 'route1eveningdir1'
-      w = 'MALL TO DT(route1 evening)'
+      w = 'MALL TO DT(R1 evening)'
     elsif s== 'route1eveningdir2'
-      w = 'DT TO MALL(route1 evening)'
+      w = 'DT TO MALL(R1 evening)'
     elsif s== 'route2daydir1'
-      w = 'route2'
+      w = 'R2'
     elsif s== 'route3daydir1'
-      w = 'route3'
+      w = 'R3'
     end
-    
+
     return w
   end
 end

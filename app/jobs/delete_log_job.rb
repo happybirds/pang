@@ -17,5 +17,7 @@ class DeleteLogJob
     if File.exist?(file_path2)
       File.delete(file_path2)
     end
+
+
   end
 end
