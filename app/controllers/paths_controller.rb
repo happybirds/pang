@@ -35,8 +35,10 @@ class PathsController < ApplicationController
      @distance_1day_direction1 =  $redis.get("distance_1day_direction1") || []
 		 @distance_1day_direction1_true =  $redis.get("distance_1day_direction1_true")|| []
 
+
 		 @distance_1day_direction2 =  $redis.get("distance_1day_direction2")|| []
 		 @distance_1day_direction2_true =  $redis.get("distance_1day_direction2_true")|| []
+
 
 	  @distance_1evening_direction1 =  $redis.get("distance_1evening_direction1")|| []
 		@distance_1evening_direction1_true =  $redis.get("distance_1evening_direction1_true")|| []
@@ -50,6 +52,12 @@ class PathsController < ApplicationController
 
 	  @distance_3day_direction1 =  $redis.get("distance_3day_direction1") || []
   	@distance_3day_direction1_true =  $redis.get("distance_3day_direction1_true")|| []
+
+
+
+
+
+
 
 
 		@no_sign_1day = $redis.get("no_sign_1day")|| []

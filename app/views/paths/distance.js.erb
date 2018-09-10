@@ -1,5 +1,8 @@
 if(<%= @no_sign_1day %>){
+		// $('.button_route1d > a > span:second-child').html('<%= @count_direction2 %>')
+
 	if("<%= @distance_1day_direction1.size %>" != 0 &&  <%= @distance_1day_direction1_true %>){
+
 		$('.route1daydir1 > li > span').removeClass('active color_red')
 		document.getElementsByName("route1daydir1").forEach(function(res,index){
 		if( $(res).attr('data-name').length > 0 && '<%= raw @distance_1day_direction1%>'.indexOf($(res).attr('data-name'))!= '-1' ){

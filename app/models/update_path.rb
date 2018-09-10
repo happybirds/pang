@@ -175,7 +175,7 @@ class UpdatePath
       _num2.keys.each do |n|
           bus_name = $redis.get(routes+"_" + "direction2_"+n)
           p datas2.include? bus_name
-        
+
             if  (datas2.include? bus_name)
                 _distance2.push(bus_name.split('_')[0] +","+n)
 
@@ -203,7 +203,6 @@ class UpdatePath
              $redis.set("distance_"+routes+"_" + "direction2",_distance2)
         end
         $redis.set("no_sign_" + routes,true)
-
     else
       @dir = 0
       $redis.set("no_sign_" + routes,false)
