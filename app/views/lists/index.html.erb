@@ -2,7 +2,11 @@
 		<!-- <div class="banner">
 		</div> -->
 		<div class="schedule">
-			<h4> <%= "#{Date.today.strftime("%Y/%m/%d, %a")}，#{Date.today.strftime('%Y')}的第#{Date.today.strftime('%j')}天" %></h4>
+			<!-- <button type="button" class='btn'>path</button> -->
+			<a href="<%= path_path%>" class='btn'>Path</a>
+			<h4> <%= "#{Date.today.strftime("%Y/%m/%d, %a")}，#{Date.today.strftime('%Y')}的第#{Date.today.strftime('%j')}天" %>
+
+			</h4>
 
 			<div class="alldate">
 			<% 1..5.times do |i| %>

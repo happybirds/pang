@@ -8,16 +8,14 @@
 
     <%= stylesheet_link_tag    'main', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'false' %>
   </head>
 
   <body>
     <div class="container">
-      <%= render "shared/top"%>
+      <%#= render "shared/top"%>
       <%= yield %>
       <%= render "shared/footer"%>
     </div>
   </body>
 </html>
-
-

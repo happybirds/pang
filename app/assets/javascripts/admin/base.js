@@ -34,5 +34,4 @@
 //= require admin/plugins/demo.min
 //= require admin/plugins/quick-sidebar.min
 //= require kindeditor
-//= require turbolinks
 //= require load_kindeditor.coffee
