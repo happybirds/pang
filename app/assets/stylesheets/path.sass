@@ -6,7 +6,7 @@
 
 
 [class^='route']
-	padding: 10px
+	// padding: 10px
 	display: flex
 	margin: 10px
 	// border: 1px solid black
@@ -33,12 +33,13 @@
 		background-color: #fff
 		border-radius: 0.25rem
 		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)
+		padding: 0
 		.current
 			font-size: 10px
 			color: red
 		li
 			display: flex
-			padding: 10px
+			padding: 5px
 			span
 				font-size: 12px
 
@@ -47,6 +48,7 @@
 
 
 .main
+	display: flex
 	.buttons
 		// display: flex
 		// justify-content: space-between
@@ -64,11 +66,16 @@
 			-webkit-tap-highlight-color: transparent
 
 
+
 		.button_route1s
-			display: flex
+			// display: flex
+
+			// position: fixed
+			// height: 50%
 			justify-content: space-between
 			flex-wrap: wrap
 			font-size: 10px
+			flex-direction: column
 			// .button_route1d
 			//
 			// 	a

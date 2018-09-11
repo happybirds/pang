@@ -8,7 +8,7 @@
       		</div>
           <%   if Time.now.strftime('%H').to_i > 18 && Time.now.strftime('%H').to_i < 23 %>
       	    <div class='button_route1e'>
-      	    	<a  href="javascript: get_state(3)">MALL TO DT(R1 Evening)</a>
+      	    	<a  href="javascript: get_state(3)" >MALL TO DT(R1 Evening)</a>
           		<a  href="javascript: get_state(4)">DT TO MALL(R1 Evening)</a>
       	    </div>
           <% end %>
@@ -34,6 +34,8 @@ function route(){
 }
 
 function get_state(s){
+	console.log($(this).data('name'))
+	$(this).css('color','red')
 	$.rails.handleRemote($('<a>', { href: "<%= change_path%>?num="+s, 'data-method': 'get'}));
 }
 
@@ -113,7 +115,7 @@ function get_state(s){
 //   console.log(i)
 // }
 //
-// setInterval(route,3000)
+setInterval(route,3000)
 //
 // if(i )
 </script>
