@@ -2,12 +2,12 @@ class CourseJob
   def perform
     mechanize = Mechanize.new
 
-    page = mechanize.post(ENV[U_URI])
+    page = mechanize.post(ENV['U_URI'])
 
     form = page.forms.first
 
-    form['username'] = ENV[U_USER]
-    form['password'] = ENV[U_PWD]
+    form['username'] = ENV['U_USER']
+    form['password'] = ENV['U_PWD']
 
     page = form.submit
 
