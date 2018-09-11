@@ -30,6 +30,8 @@ gem 'rails_kindeditor'
 
 gem 'carrierwave'
 
+# gem 'mail'
+
 gem 'geocoder'
 
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -57,6 +59,7 @@ gem 'devise'
 gem "nested_form", '0.3.2'
 # gem 'haml'
 # gem 'sinatra', require: nil
+
 
 gem 'redis'
 gem 'redis-namespace'

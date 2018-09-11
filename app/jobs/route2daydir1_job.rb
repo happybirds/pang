@@ -6,6 +6,8 @@ class Route2daydir1Job
       $redis.set('route2daydir1',@route2daydir1.map{ |n| n.name})
 
       UpdatePath.update('2day',2,1)
+    else
+      sleep(5)
     end
   end
 

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 	 get 'distance' => 'paths#distance'
    get 'change' => 'paths#change'
 	 get 'path' => 'paths#index'
+   # get 'course' => 'lists#course'
+   # get 'dashboard'=> 'lists#dashboard'
 
 	 resources :articles
 

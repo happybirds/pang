@@ -7,6 +7,8 @@ class Route3daydir1Job
 
       UpdatePath.update('3day',3,1)
       Rails.logger.info "Route3dir1Job-----start---- #{Time.now}"
+    else
+      sleep(5)
     end
   end
 
