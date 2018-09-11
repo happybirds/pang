@@ -18,8 +18,8 @@
 Crono.perform(Route1daydir1Job).every 5.seconds
 Crono.perform(Route1daydir2Job).every 5.seconds
 
-Crono.perform(Route2daydir1Job).every 5.seconds
-Crono.perform(Route3daydir1Job).every 5.seconds
+# Crono.perform(Route2daydir1Job).every 5.seconds
+# Crono.perform(Route3daydir1Job).every 5.seconds
 
 Crono.perform(Route1eveningdir1Job).every 5.seconds
 Crono.perform(Route1eveningdir2Job).every 5.seconds
@@ -27,23 +27,23 @@ Crono.perform(Route1eveningdir2Job).every 5.seconds
 #
 # Crono.perform(TestJob).every 2.seconds
 
-Crono.perform(CourseJob).every 1.day, at: { hour: 8 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 9 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 10 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 11 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 12 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 13 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 14 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 15 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 16 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 17 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 18 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 19 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 20 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 21 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 22 }
-Crono.perform(CourseJob).every 1.day, at: { hour: 23 }
-# Crono.perform(CourseJob).every 5.hours
+# Crono.perform(CourseJob).every 1.day, at: { hour: 8 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 9 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 10 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 11 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 12 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 13 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 14 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 15 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 16 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 17 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 18 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 19 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 20 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 21 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 22 }
+# Crono.perform(CourseJob).every 1.day, at: { hour: 23 }
+Crono.perform(CourseJob).every 1.hour
 
 # Crono.perform(Route1eveningdir1Job).every 5.seconds
 # Crono.perform(Route1eveningdir2Job).every 5.seconds
