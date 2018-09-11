@@ -1,4 +1,5 @@
 class CourseJob
+
   def perform
     mechanize = Mechanize.new
 
