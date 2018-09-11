@@ -70,25 +70,25 @@ class CourseJob
 
     if Course.where(catalog: 1,status: 2).count > 0
         @courses = Course.where(catalog: 1,status: 2)
-        UserMailer.sample_email(@courses,'MATH').deliver
+        UserMailer.sample_email(@courses,'Combinatorics I (MATH-2420-1)').deliver
         @courses.update(status: 1)
     end
 
     if Course.where(catalog: 2,status: 2).count > 0
         @courses = Course.where(catalog: 2,status: 2)
-        UserMailer.sample_email(@courses,'PHY').deliver
+        UserMailer.sample_email(@courses,'Life in the Universe (PHYS-1510-1)').deliver
         @courses.update(status: 1)
     end
 
     if Course.where(catalog: 3,status: 2).count > 0
         @courses = Course.where(catalog: 3,status: 2)
-        UserMailer.sample_email(@courses,'BIO').deliver
+        UserMailer.sample_email(@courses,'Current Issues Enviro. Biology (BIO-1010-1)').deliver
         @courses.update(status: 1)
     end
 
     if Course.where(catalog: 4,status: 2).count > 0
         @courses = Course.where(catalog: 4,status: 2)
-        UserMailer.sample_email(@courses,'CS').deliver
+        UserMailer.sample_email(@courses,'Computer Science I (CS-1910-2)').deliver
         @courses.update(status: 1)
     end
 

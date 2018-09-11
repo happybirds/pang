@@ -6,6 +6,6 @@ class UserMailer < ApplicationMailer
     @courses = courses
     @subject = subject
 
-    mail(to: ENV['MAIL_TO'], subject: "#{@subject}_#{Date.today}")
+    mail(to: ENV['MAIL_TO'], subject: "#{@subject}-#{Date.today}")
   end
 end
