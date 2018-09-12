@@ -1,0 +1,14 @@
+:concurrency: 5
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 20
+:queues:
+  - route1daydir1
+  - route1daydir2
+  - route1eveningdir1
+  - route1eveningdir2
+  - route2
+  - route3
+  - course
+  - other

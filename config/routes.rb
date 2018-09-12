@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   devise_for :admin,
     path_names: { sign_in: 'login', sign_out: 'logout' },
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # mount Crono::Web, at: '/crono'
-
+   mount Sidekiq::Web => '/sidekiq'
 	 root 'lists#index'
 	 get 'distance' => 'paths#distance'
    get 'change' => 'paths#change'

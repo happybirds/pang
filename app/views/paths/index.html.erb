@@ -6,12 +6,11 @@
         		<a  href="javascript: get_state(1)">MALL TO DT(R1 Day)</a>
           		<a  href="javascript: get_state(2)">DT TO MALL(R1 Day)</a>
       		</div>
-          <%   if Time.now.strftime('%H').to_i > 18 && Time.now.strftime('%H').to_i < 23 %>
       	    <div class='button_route1e'>
       	    	<a  href="javascript: get_state(3)" >MALL TO DT(R1 Evening)</a>
           		<a  href="javascript: get_state(4)">DT TO MALL(R1 Evening)</a>
       	    </div>
-          <% end %>
+
     		<div class='button_route2'>
       	    	<a  href="javascript: get_state(5)">R2</a>
       	    </div>
