@@ -7,6 +7,7 @@ class Route3daydir1Job
       # UpdatePath.update('3day',3,1)
       # Rails.logger.info "Route3dir1Job-----start---- #{Time.now}"
       Route3daydir1Worker.perform_async('Route3daydir1Job')
+      sleep(5)
   end
 
 

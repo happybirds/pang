@@ -5,6 +5,7 @@ class Route1eveningdir2Job
       # $redis.set('route1eveningdir2',@route1eveningdir1.map{ |n| n.reverse_name})
       # UpdatePath.update('1evening',12,2)
         Route1eveningdir2Worker.perform_async('Route1eveningdir2Job')
+        sleep(5)
   end
 
 end

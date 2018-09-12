@@ -6,6 +6,7 @@ class Route2daydir1Job
       #
       # UpdatePath.update('2day',2,1)
       Route2daydir1Worker.perform_async('Route2daydir1Job')
+      sleep(5)
   end
 
 # routes,route_num,direction
