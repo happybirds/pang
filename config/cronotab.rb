@@ -24,8 +24,8 @@ Crono.perform(Route3daydir1Job).every 5.seconds
 Crono.perform(Route1eveningdir1Job).every 5.seconds
 Crono.perform(Route1eveningdir2Job).every 5.seconds
 #
-Crono.perform(CourseJob).every 1.hour
+Crono.perform(CourseJob).every 1.hours
 
-# # Crono.perform(DeleteLogJob).every 10.minutes
+Crono.perform(ClearCronlogJob).every 1.hours
 #
 Crono.perform(DeleteRedisJob).every 1.days, at: '00:00'
