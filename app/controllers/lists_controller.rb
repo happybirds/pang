@@ -8,4 +8,5 @@ class ListsController < ApplicationController
 		@a = 'black'
 	end
 
+
 end
