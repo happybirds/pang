@@ -6,14 +6,14 @@
       <% if 'route1daydir2' == class_name %>
         <% routes.each do |board|%>
          <% next unless !board.reverse_name.blank? %>
-          <li  data-name="<%= board.reverse_name%>" name="<%= class_name %>">
+          <li  data-name="<%= board.reverse_name%>" id='<%= class_name%><%=board.sort%>' name="<%= class_name %>">
              <span></span><span><%= board.reverse_name.split('_')[0]%></span>
           </li>
         <% end %>
       <% else %>
         <% routes.each do |board|%>
          <% next unless !board.name.blank? %>
-          <li  data-name="<%= board.name%>" name="<%= class_name %>">
+          <li  data-name="<%= board.name%>" id="<%= class_name%><%=board.sort%>" name="<%= class_name %>">
              <span></span><span><%= board.name.split('_')[0]%></span>
           </li>
         <% end %>

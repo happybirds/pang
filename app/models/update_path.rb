@@ -203,6 +203,11 @@ class UpdatePath
              $redis.set("distance_"+routes+"_" + "direction2",_distance2)
         end
         $redis.set("no_sign_" + routes,true)
+
+        $redis.set("count_" + routes+"_" + "direction1",_num1.count)
+        $redis.set("count_" + routes+"_" + "direction2",_num2.count)
+
+
     else
       @dir = 0
       $redis.set("no_sign_" + routes,false)

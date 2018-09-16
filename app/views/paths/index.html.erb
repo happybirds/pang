@@ -3,19 +3,19 @@
       <div class='buttons'>
         <div class="button_route1s">
         	<div class='button_route1d'>
-        		<a  href="javascript: get_state(1)">MALL TO DT(R1 Day)</a>
-          		<a  href="javascript: get_state(2)">DT TO MALL(R1 Day)</a>
+        		<a  href="javascript: get_state(1)" class='button'><span>0</span>M-D</a>
+          		<a  href="javascript: get_state(2)" class='button'><span>0</span>D-M</a>
       		</div>
       	    <div class='button_route1e'>
-      	    	<a  href="javascript: get_state(3)" >MALL TO DT(R1 Evening)</a>
-          		<a  href="javascript: get_state(4)">DT TO MALL(R1 Evening)</a>
+      	    	<a  href="javascript: get_state(3)"  class='button'><span>0</span>M-D*</a>
+          		<a  href="javascript: get_state(4)"  class='button'><span>0</span>D-M*</a>
       	    </div>
 
     		<div class='button_route2'>
-      	    	<a  href="javascript: get_state(5)">R2</a>
+      	    	<a  href="javascript: get_state(5)"  class='button'><span>0</span>R2</a>
       	    </div>
      		<div class='button_route3'>
-      	    	<a  href="javascript: get_state(6)">R3</a>
+      	    	<a  href="javascript: get_state(6)"  class='button'><span>0</span>R3</a>
       	    </div>
         </div>
 
@@ -33,11 +33,13 @@ function route(){
 }
 
 function get_state(s){
-	console.log($(this).data('name'))
-	$(this).css('color','red')
 	$.rails.handleRemote($('<a>', { href: "<%= change_path%>?num="+s, 'data-method': 'get'}));
 }
 
+$('.button').click(function(){
+	$('.button').css('color','black')
+	$(this).css('color','red')
+})
 // function get_state(s)
 // {
 // 	if(s==1){
@@ -114,6 +116,7 @@ function get_state(s){
 //   console.log(i)
 // }
 //
+
 setInterval(route,3000)
 //
 // if(i )

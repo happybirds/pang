@@ -1,5 +1,5 @@
 if(<%= @no_sign_1day %>){
-		// $('.button_route1d > a > span:second-child').html('<%= @count_direction2 %>')
+		// $('.button_route1d > a > span').html('<%= @count_1evening_direction1 %>')
 
 	if("<%= @distance_1day_direction1.size %>" != 0 &&  <%= @distance_1day_direction1_true %>){
 
@@ -42,11 +42,15 @@ if("<%= @distance_1day_direction2.size %>" != 0 &&  <%= @distance_1day_direction
 if(<%= @no_sign_1evening %>){
 if("<%= @distance_1evening_direction1.size %>" != 0 &&  <%= @distance_1evening_direction1_true %>){
 	$('.route1eveningdir1 > li > span').removeClass('active color_red')
+	$('.button_route1e > a:first-child > span').html('<%= @count_1evening_direction1 %>')
 	document.getElementsByName("route1eveningdir1").forEach(function(res,index){
 		// console.log("<%= @distance_1evening_direction1%>")
+
 	if( $(res).attr('data-name').length > 0 && '<%= raw @distance_1evening_direction1%>'.indexOf($(res).attr('data-name'))!= '-1' ){
 				$(res).children(":first-child").addClass('active')
 				$(res).children(":last-child").addClass('color_red')
+	// console.log($(res).offsetTop)
+					// $('html,body').animate({scrollTop: $(res).offsetTop)
 		if(index == document.getElementsByName("route1eveningdir1").length - 1 ){
 				console.log('去除样式')
 				$('.route1eveningdir1 > li:last-child > span').removeClass('active color_red')
@@ -58,6 +62,7 @@ if("<%= @distance_1evening_direction1.size %>" != 0 &&  <%= @distance_1evening_d
 
 if("<%= @distance_1evening_direction2.size %>" != 0 &&  <%= @distance_1evening_direction2_true %>){
 	$('.route1eveningdir2 > li > span').removeClass('active color_red')
+	$('.button_route1e > a:last-child > span').html('<%= @count_1evening_direction2 %>')
 	document.getElementsByName("route1eveningdir2").forEach(function(res,index){
 	if( $(res).attr('data-name').length > 0 && '<%= raw @distance_1evening_direction2%>'.indexOf($(res).attr('data-name'))!= '-1' ){
 				$(res).children(":first-child").addClass('active')
@@ -112,6 +117,7 @@ if(<%= @no_sign_3day %>){
 		if( $(res).attr('data-name').length > 0 && '<%= raw @distance_3day_direction1%>'.indexOf($(res).attr('data-name'))!= '-1' ){
 					$(res).children(":first-child").addClass('active')
 					$(res).children(":last-child").addClass('color_red')
+
 			if(index == document.getElementsByName("route3daydir1").length - 1 ){
 					$('.route3daydir1 > li:last-child > span').removeClass('active color_red')
 			}
