@@ -1,12 +1,11 @@
 class Route1eveningdir2Job
 
   def perform
-      # @route1eveningdir1 = Board.where(route_name: '1evening',route_num: 12)
-      # $redis.set('route1eveningdir2',@route1eveningdir1.map{ |n| n.reverse_name})
-      # UpdatePath.update('1evening',12,2)
+        ms = ['Mon','Tue','Wed',"Thu",'Fri','Sat']
+      if Time.now.strftime('%H').to_i > 19 && Time.now.strftime('%H').to_i < 24 && ms.include?(Date.today.strftime("%a"))
         Route1eveningdir2Worker.perform_async('Route1eveningdir2Job')
-        sleep(5)
+      end
+        sleep 3
   end
 
 end
-# routes,route_num,direction

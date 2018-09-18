@@ -34,11 +34,11 @@ class PathsController < ApplicationController
 	 def distance
      @distance_1day_direction1 =  $redis.get("distance_1day_direction1") || []
 		 @distance_1day_direction1_true =  $redis.get("distance_1day_direction1_true")|| []
-
+		 @count_1day_direction1 =  $redis.get("count_1day_direction1")|| 0
 
 		 @distance_1day_direction2 =  $redis.get("distance_1day_direction2")|| []
 		 @distance_1day_direction2_true =  $redis.get("distance_1day_direction2_true")|| []
-
+		 @count_1day_direction2 =  $redis.get("count_1day_direction2")|| 0
 
 	  @distance_1evening_direction1 =  $redis.get("distance_1evening_direction1")|| []
 		@distance_1evening_direction1_true =  $redis.get("distance_1evening_direction1_true")|| []
@@ -52,10 +52,11 @@ class PathsController < ApplicationController
 
 		@distance_2day_direction1 =  $redis.get("distance_2day_direction1") || []
  	  @distance_2day_direction1_true =  $redis.get("distance_2day_direction1_true")|| []
+		 @count_2day_direction1 =  $redis.get("count_2day_direction2")|| 0
 
 	  @distance_3day_direction1 =  $redis.get("distance_3day_direction1") || []
   	@distance_3day_direction1_true =  $redis.get("distance_3day_direction1_true")|| []
-
+	  @count_3day_direction1 =  $redis.get("count_3day_direction1")|| 0
 
 
 

@@ -1,6 +1,6 @@
 class DeleteRedisJob
   def perform
-    RedisWorker.perform_async('DeleteRedisJob')
+    $redis.flushdb
   end
 
 end

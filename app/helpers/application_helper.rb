@@ -1,4 +1,6 @@
 module ApplicationHelper
+
+
   def changeW(i)
     if i == 1
       w = 'Mon'
