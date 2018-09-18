@@ -10,14 +10,11 @@ class UpdatePath
       board_count = 0
     end
     @dir = 9
-    # if routes == '1day'
+
     uri = URI(ENV[routes] )
-  # end
+
     res = Net::HTTP.get(uri)
     bus_infos =  JSON.parse res
-    # p uri
-    # p '公交'
-    # p bus_infos.size
 
     if bus_infos.size != 0  #有信号
         c = {}
@@ -58,21 +55,11 @@ class UpdatePath
             break
           end
           _nh.push(h.sort[0])
-          # _nh.push(h.sort[0])
-
           _num.push(n['busNumber'])
-# p $redis.get(routes+"_" +n['busNumber'])
-# p $redis.get(routes+"_" + "direction1_flag"+n['busNumber']).to_i
-# p route_num == 3
-# p $redis.get(routes+"_" +n['busNumber']).to_i == board_count
          if $redis.get(routes+"_" +n['busNumber'])
-# p 333333
-
             if  ($redis.get(routes+"_" + "direction1_flag"+n['busNumber']).to_i == 1) || ($redis.get(routes+"_" +n['busNumber']).to_i < c[c[_nh[index]]].to_i  && direction.to_i == 1)
-                # p c[c[_nh[index]]].to_i
                 _num1[n['busNumber']] = n['busNumber']
                 _num2.delete(n['busNumber'])
-# p 22222
                 @dir = 1
                 if($redis.get(routes+"_" +n['busNumber']).to_i == board_count )
 
@@ -83,13 +70,9 @@ class UpdatePath
                     $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],1)
                     $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],0)
                   end
-                  # $redis.set(routes+"_"+n['busNumber'],board_count)
 
-                  p '正面结束！！！！'
-                  yy = '正面结束！！！！'
                   break
                 end
-# p 11111111
                 $redis.set(routes+"_" + "direction1_"+n['busNumber'],c[_nh[index]])
                 $redis.del(routes+"_" + "direction2_"+n['busNumber'])
                 $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],1)
@@ -100,11 +83,9 @@ class UpdatePath
                 _num2[n['busNumber']] = n['busNumber']
                 _num1.delete(n['busNumber'])
                 if($redis.get(routes+"_" +n['busNumber']).to_i == 1 )
-                  # $redis.set(routes+"_"+n['busNumber'],1)
                   $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],0)
                   $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],1)
-                  p '反面结束！！！！'
-                  yy = '反面结束！！！！'
+
                   break
                 end
 
@@ -198,26 +179,21 @@ class UpdatePath
         if @dir == 1
             $redis.set("distance_"+routes+"_" + "direction1",_distance1)
             $redis.set("count_" + routes+"_" + "direction1",_num1.count)
-
-            # $redis.set("count_" + routes+"_" + "direction2",0)
         end
 
         if @dir == 2
-        
+
            $redis.set("distance_"+routes+"_" + "direction2",_distance2)
            $redis.set("count_" + routes+"_" + "direction2",_num2.count)
-           # $redis.set("count_" + routes+"_" + "direction1",0)
         end
         $redis.set("no_sign_" + routes,true)
-
-
-
 
 
     else
       @dir = 0
       $redis.set("no_sign_" + routes,false)
-
+       $redis.set("count_" + routes+"_" + "direction2",0)
+       $redis.set("count_" + routes+"_" + "direction1",0)
     end
   end
 

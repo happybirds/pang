@@ -9,6 +9,7 @@ if(<%= @no_sign_1day %>){
 		if( $(res).attr('data-name').length > 0 && '<%= raw @distance_1day_direction1%>'.indexOf($(res).attr('data-name'))!= '-1' ){
 					$(res).children(":first-child").addClass('active')
 					$(res).children(":last-child").addClass('color_red')
+					$("html,body").animate({scrollTop:$(res).offset().top - 100},1000);
 			if(index == document.getElementsByName("route1daydir1").length - 1 ){
 					$('.route1daydir1 > li:last-child > span').removeClass('active color_red')
 			}
@@ -24,6 +25,7 @@ if("<%= @distance_1day_direction2.size %>" != 0 &&  <%= @distance_1day_direction
 				$(res).children(":first-child").addClass('active')
 				$(res).children(":last-child").addClass('color_red')
 				// console.log($(res).attr('data-name'))
+					$("html,body").animate({scrollTop:$(res).offset().top - 100},1000);
 		if(index == document.getElementsByName("route1daydir2").length - 1 ){
 				$('.route1daydir2 > li:last-child > span').removeClass('active color_red')
 		}
@@ -51,7 +53,7 @@ if("<%= @distance_1evening_direction1.size %>" != 0 &&  <%= @distance_1evening_d
 	if( $(res).attr('data-name').length > 0 && '<%= raw @distance_1evening_direction1%>'.indexOf($(res).attr('data-name'))!= '-1' ){
 				$(res).children(":first-child").addClass('active')
 				$(res).children(":last-child").addClass('color_red')
-	// console.log($(res).offsetTop)
+				$("html,body").animate({scrollTop:$(res).offset().top - 100},1000);
 					// $('html,body').animate({scrollTop: $(res).offsetTop)
 		if(index == document.getElementsByName("route1eveningdir1").length - 1 ){
 				// console.log('去除样式')
@@ -69,6 +71,7 @@ if("<%= @distance_1evening_direction2.size %>" != 0 &&  <%= @distance_1evening_d
 	if( $(res).attr('data-name').length > 0 && '<%= raw @distance_1evening_direction2%>'.indexOf($(res).attr('data-name'))!= '-1' ){
 				$(res).children(":first-child").addClass('active')
 				$(res).children(":last-child").addClass('color_red')
+				$("html,body").animate({scrollTop:$(res).offset().top - 100},1000);
 		if(index == document.getElementsByName("route1eveningdir2").length - 1 ){
 			// console.log('去除样式')
 				$('.route1eveningdir2 > li:last-child > span').removeClass('active color_red')
@@ -97,6 +100,7 @@ if(<%= @no_sign_2day %>){
 		if( $(res).attr('data-name').length > 0 && '<%= raw @distance_2day_direction1%>'.indexOf($(res).attr('data-name'))!= '-1' ){
 					$(res).children(":first-child").addClass('active')
 					$(res).children(":last-child").addClass('color_red')
+					$("html,body").animate({scrollTop:$(res).offset().top - 100},1000);
 			if(index == document.getElementsByName("route2daydir1").length - 1 ){
 					$('.route2daydir1 > li:last-child > span').removeClass('active color_red')
 			}
@@ -121,7 +125,7 @@ if(<%= @no_sign_3day %>){
 		if( $(res).attr('data-name').length > 0 && '<%= raw @distance_3day_direction1%>'.indexOf($(res).attr('data-name'))!= '-1' ){
 					$(res).children(":first-child").addClass('active')
 					$(res).children(":last-child").addClass('color_red')
-
+					$("html,body").animate({scrollTop:$(res).offset().top - 100},1000);
 			if(index == document.getElementsByName("route3daydir1").length - 1 ){
 					$('.route3daydir1 > li:last-child > span').removeClass('active color_red')
 			}
