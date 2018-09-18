@@ -174,14 +174,15 @@ class UpdatePath
             end
        end
 
-           p "正面----#{_distance1}"
-           p "反面-----#{_distance2}"
-        if @dir == 1
+           p "正面----#{_distance1}----#{_num1.count}"
+           p "反面-----#{_distance2}----#{_num2.count}"
+        if direction == 1
             $redis.set("distance_"+routes+"_" + "direction1",_distance1)
             $redis.set("count_" + routes+"_" + "direction1",_num1.count)
+
         end
 
-        if @dir == 2
+        if direction == 2
 
            $redis.set("distance_"+routes+"_" + "direction2",_distance2)
            $redis.set("count_" + routes+"_" + "direction2",_num2.count)
