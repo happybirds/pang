@@ -5,6 +5,6 @@ class Route3daydir1Job
       if Time.now.strftime('%H').to_i > 7 && Time.now.strftime('%H').to_i < 19 && ms.include?(Date.today.strftime("%a"))
         Route3daydir1Worker.perform_async('Route3daydir1Job')
       end
-      sleep 3
+      sleep 5
   end
 end
