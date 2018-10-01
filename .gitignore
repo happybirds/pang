@@ -33,3 +33,4 @@ config/puma.rb
 app/.DS_Store
 Gemfile.lock
 .DS_Store
+dump.rdb
