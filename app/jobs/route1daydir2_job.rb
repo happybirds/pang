@@ -6,7 +6,7 @@ class Route1daydir2Job
       else
         1.upto(3) do |n|
           puts n
-          sleep 1
+          # sleep 1
         end
       end
   end
