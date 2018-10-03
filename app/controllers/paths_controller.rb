@@ -52,7 +52,7 @@ class PathsController < ApplicationController
 
 		@distance_2day_direction1 =  $redis.get("distance_2day_direction1") || []
  	  @distance_2day_direction1_true =  $redis.get("distance_2day_direction1_true")|| []
-		 @count_2day_direction1 =  $redis.get("count_2day_direction2")|| 0
+		 @count_2day_direction1 =  $redis.get("count_2day_direction1")|| 0
 
 	  @distance_3day_direction1 =  $redis.get("distance_3day_direction1") || []
   	@distance_3day_direction1_true =  $redis.get("distance_3day_direction1_true")|| []

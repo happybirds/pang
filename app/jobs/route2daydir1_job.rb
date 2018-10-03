@@ -5,6 +5,7 @@ class Route2daydir1Job
       if Time.now.strftime('%H').to_i > 7 && Time.now.strftime('%H').to_i < 19 && ms.include?(Date.today.strftime("%a"))
         Route2daydir1Worker.perform_async('Route2daydir1Job')
       else
+        $redis.set("count_2day_direction1",0)
         1.upto(5) do |n|
           puts n
           # sleep 1
