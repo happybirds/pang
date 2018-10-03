@@ -1,9 +1,9 @@
 class PathsController < ApplicationController
 	def index
-		@route1daydir1 = Board.where(route_name: '1day',route_num: 1)
-		@route1daydir2 = Board.where(route_name: '1day',route_num: 1).order('sort desc')
-		@route1eveningdir1 = Board.where(route_name: '1evening',route_num: 12)
-		@route1eveningdir2 = Board.where(route_name: '1evening',route_num: 12).order('sort desc')
+		@route1daydir1 = Board.where(route_name: '1day',route_num: 1,reverse_name:'')
+		@route1daydir2 = Board.where(route_name: '1day',route_num: 1,name:'').order('sort desc')
+		@route1eveningdir1 = Board.where(route_name: '1evening',route_num: 12,reverse_name:'')
+		@route1eveningdir2 = Board.where(route_name: '1evening',route_num: 12,name:'').order('sort desc')
 		@route2daydir1 = Board.where(route_name: '2day',route_num: 2)
 		@route3daydir1 = Board.where(route_name: '3day',route_num: 3)
 	end

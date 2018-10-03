@@ -3,19 +3,19 @@
       <div class='buttons'>
         <div class="button_route1s">
         	<div class='button_route1d'>
-        		<a  href="javascript: get_state(1)" class='button'><span>0</span>M-D</a>
-          		<a  href="javascript: get_state(2)" class='button'><span>0</span>D-M</a>
+        		<a  href="javascript: get_state(1)" class='button'><span><%= $redis.get("count_1day_direction1") %></span>M-D</a>
+          		<a  href="javascript: get_state(2)" class='button'><span><%= $redis.get("count_1day_direction2") %></span>D-M</a>
       		</div>
       	    <div class='button_route1e'>
-      	    	<a  href="javascript: get_state(3)"  class='button'><span>0</span>M-D*</a>
-          		<a  href="javascript: get_state(4)"  class='button'><span>0</span>D-M*</a>
+      	    	<a  href="javascript: get_state(3)"  class='button'><span><%= $redis.get("count_1evening_direction1") %></span>M-D*</a>
+          		<a  href="javascript: get_state(4)"  class='button'><span><%= $redis.get("count_1evening_direction2") %></span>D-M*</a>
       	    </div>
 
     		<div class='button_route2'>
-      	    	<a  href="javascript: get_state(5)"  class='button'><span>0</span>R2</a>
+      	    	<a  href="javascript: get_state(5)"  class='button'><span><%= $redis.get("count_2day_direction1") %></span>R2</a>
       	    </div>
      		<div class='button_route3'>
-      	    	<a  href="javascript: get_state(6)"  class='button'><span>0</span>R3</a>
+      	    	<a  href="javascript: get_state(6)"  class='button'><span><%= $redis.get("count_3day_direction1") %></span>R3</a>
       	    </div>
         </div>
 

@@ -137,6 +137,9 @@ class UpdatePath
 
         _num1.keys.each do |n|
             bus_name = $redis.get(routes+"_" + "direction1_"+n)
+            # p 'datas1+++++++++++++++++++++'
+               # p datas1
+                 p datas1.include? bus_name
             if  (datas1.include? bus_name)
                   _distance1.push(bus_name.split('_')[0] +","+n)
                  $redis.set("prev_distance_"+routes+"_" + "direction1"+","+n,bus_name.split('_')[0] +","+n)
@@ -155,6 +158,8 @@ class UpdatePath
       end
       _num2.keys.each do |n|
           bus_name = $redis.get(routes+"_" + "direction2_"+n)
+            # p 'datas2+++++++++++++++++++++'
+          # p datas2
           p datas2.include? bus_name
 
             if  (datas2.include? bus_name)
