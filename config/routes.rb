@@ -24,4 +24,18 @@ Rails.application.routes.draw do
       resources :boards
 	 end
 
+
+
+  namespace :api do
+    namespace :v1 do
+      get 'r1daydir1' => 'paths#r1daydir1'
+      get 'r1daydir2' => 'paths#r1daydir2'
+      get 'r1eveningdir1' => 'paths#r1eveningdir1'
+      get 'r1eveningdir2' => 'paths#r1eveningdir2'
+      get 'r2daydir1' => 'paths#r2daydir1'
+      get 'r3daydir1' => 'paths#r3daydir1'
+
+      get 'count' => 'paths#count'
+    end
+  end
 end
