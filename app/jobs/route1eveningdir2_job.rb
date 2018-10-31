@@ -6,10 +6,10 @@ class Route1eveningdir2Job
         Route1eveningdir2Worker.perform_async('Route1eveningdir2Job')
       end
         $redis.set("count_1evening_direction2",0)
-        1.upto(7) do |n|
-          puts n
-          # sleep 1
-        end
+        # 1.upto(7) do |n|
+        #   puts n
+        #   # sleep 1
+        # end
   end
 
 end
