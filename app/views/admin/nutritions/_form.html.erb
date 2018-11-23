@@ -1,0 +1,69 @@
+<%= form_for([:admin, @board], html: { class: 'form-horizontal' }) do |f| %>
+
+  <div class="form-body">
+    <div class="form-group form-md-line-input">
+      <%= f.label '路线名称', class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+        <%= f.text_field :route_name, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+
+    <div class="form-group form-md-line-input">
+      <%= f.label '路线号码', class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+          <%= f.select :route_num, Board.route_nums.keys.to_a,{},{class:"form-control"} %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+
+    <div class="form-group form-md-line-input">
+      <%= f.label '站名', class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+        <%= f.text_field :name, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+
+    <div class="form-group form-md-line-input">
+      <%= f.label '反向站名（1号线）', class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+        <%= f.text_field :reverse_name, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+
+    <div class="form-group form-md-line-input">
+      <%= f.label 'lat', class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+        <%= f.text_field :lat, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+
+    <div class="form-group form-md-line-input">
+      <%= f.label 'long', class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+        <%= f.text_field :long, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+
+    <div class="form-group form-md-line-input">
+      <%= f.label 'sort', class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+        <%= f.text_field :sort, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="form-actions">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-10">
+        <button type="submit" class="btn green btn-outline col-md-2" id="btn_ok" data-loading-text="提交中">提交</button>
+      </div>
+    </div>
+  </div>
+<% end %>

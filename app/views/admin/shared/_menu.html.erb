@@ -71,5 +71,47 @@
 
         </ul>
       </li>
+
+      <li class="nav-item">
+        <a href="javascript:;" class="nav-link nav-toggle" id="nutritions_link">
+          <i class=" icon-note"></i>
+          <span class="title">营养</span>
+          <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+          <li class="nav-item" id="nutritions">
+              <a href="<%= admin_nutritions_path %>" class="nav-link nav-toggle">
+                <i class="icon-settings"></i> 列表
+              </a>
+            </li>
+            <li class="nav-item" id="new_nutrition">
+              <a href="<%= new_admin_nutrition_path %>" class="nav-link nav-toggle">
+                <i class="icon-settings"></i> 发布
+              </a>
+            </li>
+
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a href="javascript:;" class="nav-link nav-toggle" id="beans_link">
+          <i class=" icon-note"></i>
+          <span class="title">豆子</span>
+          <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+          <li class="nav-item" id="beans">
+              <a href="<%= admin_beans_path %>" class="nav-link nav-toggle">
+                <i class="icon-settings"></i> 列表
+              </a>
+            </li>
+            <li class="nav-item" id="new_bean">
+              <a href="<%= new_admin_bean_path %>" class="nav-link nav-toggle">
+                <i class="icon-settings"></i> 发布
+              </a>
+            </li>
+
+        </ul>
+      </li>
   </ul>
 </div>

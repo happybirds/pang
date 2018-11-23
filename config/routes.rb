@@ -22,6 +22,9 @@ Rails.application.routes.draw do
 	    resources :articles
   	  resources :schedules
       resources :boards
+      resources :nutritions
+      resources :beans
+      resources :bean_nutritions
 	 end
 
 
@@ -34,6 +37,7 @@ Rails.application.routes.draw do
       get 'r1eveningdir2' => 'paths#r1eveningdir2'
       get 'r2daydir1' => 'paths#r2daydir1'
       get 'r3daydir1' => 'paths#r3daydir1'
+      get 'timer' =>'timer#timer'
 
       get 'count' => 'paths#count'
     end

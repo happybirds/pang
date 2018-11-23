@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_011906) do
+ActiveRecord::Schema.define(version: 2018_11_23_155419) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(version: 2018_09_11_011906) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "bean_nutritions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "bean_id"
+    t.integer "nutrition_id"
+    t.string "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "beans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.text "content", limit: 4294967295
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "boards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "reverse_name"
@@ -45,6 +61,16 @@ ActiveRecord::Schema.define(version: 2018_09_11_011906) do
     t.integer "sort"
     t.string "route_name"
     t.integer "route_num"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bus_times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "board_id"
+    t.integer "hour"
+    t.integer "minute"
+    t.string "ampm"
+    t.integer "flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,6 +108,20 @@ ActiveRecord::Schema.define(version: 2018_09_11_011906) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_crono_jobs_on_job_id", unique: true
+  end
+
+  create_table "nutrition_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "bean_nutrition_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nutritions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_zh"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

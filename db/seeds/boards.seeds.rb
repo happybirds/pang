@@ -5,4 +5,3 @@
 #     password: '123456'
 #     )
 # puts "\t #{u.email} - #{u.password}"
-gem 'seedbank', '~> 0.5.0.pre'

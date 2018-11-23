@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">列表</div>
+            <div class="actions btn-group">
+                <a href="javascript:;" class="dropdown-toggle btn-outline dropdown-toggle btn dark btn-circle btn-sm" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                  列表<i class="fa fa-angle-down"></i>
+                </a>
+                <a href="#serch_div" class="dropdown-toggle btn-outline dropdown-toggle btn dark btn-circle btn-sm" data-toggle="modal">
+                  <i class="icon-magnifier"></i>搜索</a>
+              </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+          <table class="table table-striped table-bordered table-hover">
+             <thead>
+              <tr>
+                <th>路线名称</th>
+                <th>路线号码</th>
+                <th>站名</th>
+                <th>反向站名（1号线）</th>
+                <th>lat</th>
+                <th>long</th>
+                <th>排序</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @boards.each do |board| %>
+              <tr>
+                <td>
+                  <%= board.route_name%>
+                </td>
+                <td><%= board.route_num%></td>
+                <td><%= board.name %></td>
+                <td><%= board.reverse_name  %></td>
+                <td><%= board.lat%></td>
+                <td><%= board.long%></td>
+                <td><%= board.sort%></td>
+                <td>
+
+                  <%= link_to "编辑", edit_admin_board_path(board)%>
+                  <%= link_to "删除", admin_board_path(board),method: :delete%>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= paginate @boards %>
+        </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'query' %>
+
+<script type="text/javascript">
+  $("#news").addClass("active");
+  $("#news").parents(".nav-item").addClass("active open")
+  $("#news_link").append("<span class='selected'></span>")
+</script>
