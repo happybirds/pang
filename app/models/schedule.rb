@@ -7,7 +7,7 @@ class Schedule < ApplicationRecord
     '周五':5,
   }
   enum address:{
-    'McDougall Hall':1,
+    'UPEI Campus, Robertson Library 235 (Lecture)':1,
     'SDU':2,
     'Cass Hall':3,
     'Duffy Science Ctr':4,
