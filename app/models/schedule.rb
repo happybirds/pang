@@ -7,9 +7,9 @@ class Schedule < ApplicationRecord
     '周五':5,
   }
   enum address:{
-    'UPEI Campus, Robertson Library 235 (Lecture)':1,
-    'UPEI Campus, Duffy Research Ctr 212 (Lecture)':2,
-    'UPEI Campus, Cass Science Hall 104 (Lab)':3
+    'Robertson Library 235 (Lecture)':1,
+    'Duffy Research Ctr 212 (Lecture)':2,
+    'Cass Science Hall 104 (Lab)':3
    
   }
 
