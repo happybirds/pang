@@ -8,10 +8,9 @@ class Schedule < ApplicationRecord
   }
   enum address:{
     'UPEI Campus, Robertson Library 235 (Lecture)':1,
-    'SDU':2,
-    'Cass Hall':3,
-    'Duffy Science Ctr':4,
-    'Kelley Memorial': 5
+    'UPEI Campus, Duffy Research Ctr 212 (Lecture)':2,
+    'UPEI Campus, Cass Science Hall 104 (Lab)':3
+   
   }
 
 end
