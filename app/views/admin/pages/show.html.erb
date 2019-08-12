@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box green">
+        <div class="portlet-title">
+          <div class="caption">Information</div>
+        </div>
+
+        <div class="portlet-body form">
+          <form class="form-horizontal" role="form">
+            <div class="form-body">
+              <div class="row" >
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label class="control-label col-md-4">Name:</label>
+                        <div class="col-md-8">
+                            <p class="form-control-static"><%= @page.name %></p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+       
+
+
+              <div class="row" >
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Private:</label>
+                        <div class="col-md-8">
+                      
+                          <% @pri.each do |setting|%>
+
+                            <p ><%= setting %><br></p>
+
+                          <% end %>
+
+
+                        </div>
+                     </div>
+                     
+                      <div class="form-group">
+                        <label class="control-label col-md-4">Global:</label>
+                        <div class="col-md-8">
+                      
+                          <% @glo.each do |setting|%>
+
+                            <p ><%= setting %><br></p>
+
+                          <% end %>
+
+
+                        </div>
+
+                    </div>
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  $("#settings").addClass("active");
+  $("#settings").parents(".nav-item").addClass("active open")
+  $("#settings_link").append("<span class='selected'></span>")
+</script>

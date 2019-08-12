@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">List</div>
+            <div class="actions btn-group">
+               <a href="<%= admin_transfor_all_path%>" class=" btn-outline  btn dark btn-circle btn-sm" >
+                  chop | private| global</i>
+                </a>
+                <a href="<%= new_admin_page_path%>" class=" btn-outline  btn dark btn-circle btn-sm" >
+                  add page</i>
+                </a>
+                <a href="<%= new_admin_app_setting_path%>" class=" btn-outline  btn dark btn-circle btn-sm" >
+                  add app-setting</i>
+                </a>
+              </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+          <table class="table table-striped table-bordered table-hover">
+             <thead>
+              <tr>
+                <th>page</th>
+                <th>app-setting count</th>
+                <th>private</th>
+                <th>global(system,count>2)</th>
+                <th>operate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @pages.each do |page| %>
+              <tr>
+                <td>
+                  <%=link_to  page.name,admin_page_path(page.id)%>
+                </td>
+                <td><%= page.page_settings.count%></td>
+                <td><%= page.private %></td>
+                <td><%= page.global %></td>
+                <td>
+                  <%= link_to 'transfor',  admin_transfor_path(id: page.id)%>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  $("#settings").addClass("active");
+  $("#settings").parents(".nav-item").addClass("active open")
+  $("#settings_link").append("<span class='selected'></span>")
+</script>

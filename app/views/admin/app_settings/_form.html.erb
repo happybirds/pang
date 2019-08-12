@@ -1,0 +1,21 @@
+<%= form_for([:admin, @app_setting], html: { class: 'form-horizontal' }) do |f| %>
+
+  <div class="form-body">
+    <div class="form-group form-md-line-input">
+      <%= f.label '名称', class: 'col-sm-3 control-label' %>
+      <div class="col-md-7">
+        <%= f.text_field :name, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+      </div>
+    </div>
+
+   
+  </div>
+  <div class="form-actions">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-10">
+        <button type="submit" class="btn green btn-outline col-md-2" id="btn_ok" data-loading-text="提交中">提交</button>
+      </div>
+    </div>
+  </div>
+<% end %>

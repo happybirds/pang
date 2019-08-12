@@ -1,7 +1,7 @@
 <div class="page-sidebar-wrapper">
   <div class="page-sidebar navbar-collapse collapse">
     <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
-      <li class="nav-item ">
+<!--       <li class="nav-item ">
         <a href="<%=  %>" class="nav-link nav-toggle">
           <i class="icon-home"></i>
           <span class="title">首页</span>
@@ -70,9 +70,25 @@
             </li>
 
         </ul>
-      </li>
+      </li> -->
 
-      <li class="nav-item">
+   <li class="nav-item">
+        <a href="javascript:;" class="nav-link nav-toggle" id="settings_link">
+          <i class=" icon-note"></i>
+          <span class="title">app setting</span>
+          <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+          <li class="nav-item" id="settings">
+              <a href="<%= admin_setting_path %>" class="nav-link nav-toggle">
+                <i class="icon-settings"></i> List
+              </a>
+            </li>
+         
+
+        </ul>
+      </li>
+    <!--   <li class="nav-item">
         <a href="javascript:;" class="nav-link nav-toggle" id="nutritions_link">
           <i class=" icon-note"></i>
           <span class="title">营养</span>
@@ -91,9 +107,9 @@
             </li>
 
         </ul>
-      </li>
+      </li> -->
 
-      <li class="nav-item">
+    <!--   <li class="nav-item">
         <a href="javascript:;" class="nav-link nav-toggle" id="beans_link">
           <i class=" icon-note"></i>
           <span class="title">豆子</span>
@@ -112,6 +128,6 @@
             </li>
 
         </ul>
-      </li>
+      </li> -->
   </ul>
 </div>

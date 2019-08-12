@@ -1,0 +1,2 @@
+class BusDetail < ApplicationRecord
+end

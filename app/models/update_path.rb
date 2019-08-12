@@ -54,6 +54,7 @@ class UpdatePath
             $redis.del(routes+"_" +n['busNumber'])
             break
           end
+    
           _nh.push(h.sort[0])
           _num.push(n['busNumber'])
          if $redis.get(routes+"_" +n['busNumber'])
@@ -61,6 +62,7 @@ class UpdatePath
                 _num1[n['busNumber']] = n['busNumber']
                 _num2.delete(n['busNumber'])
                 @dir = 1
+              
                 if($redis.get(routes+"_" +n['busNumber']).to_i == board_count )
 
                   if route_num == 2 || route_num ==3
@@ -78,8 +80,18 @@ class UpdatePath
                 $redis.set(routes+"_" + "direction1_flag"+n['busNumber'],1)
                 $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],0)
                 $redis.set(routes+"_"+n['busNumber'],c[c[_nh[index]]])
+               
+                if _nh[index]< 0.02
+                  if BusDetail.where(board_id: c[c[_nh[index]]] -1  ,route_name: routes, bus_number: n['busNumber'],name: c[_nh[index]],distance: _nh[index]).length == 0
+                  @bus_detail = BusDetail.create(board_id: c[c[_nh[index]]] -1  ,route_name: routes, bus_number: n['busNumber'],name: c[_nh[index]],distance: _nh[index],
+                    arrived_at: Time.now(),dir: 1)
+                   end
+
+                 end
+
              elsif   ($redis.get(routes+"_" + "direction2_flag"+n['busNumber']).to_i == 1) || ($redis.get(routes+"_" +n['busNumber']).to_i > c[c[_nh[index]]].to_i   && direction.to_i == 2)
                 @dir = 2
+                
                 _num2[n['busNumber']] = n['busNumber']
                 _num1.delete(n['busNumber'])
                 if($redis.get(routes+"_" +n['busNumber']).to_i == 1 )
@@ -95,6 +107,14 @@ class UpdatePath
                 $redis.set(routes+"_" + "direction2_flag"+n['busNumber'],1)
                 $redis.set(routes+"_"+n['busNumber'],c[c[_nh[index]]])
 
+              if _nh[index]< 0.02
+                if BusDetail.where(board_id: c[c[_nh[index]]] -1  ,route_name: routes, bus_number: n['busNumber'],name: c[_nh[index]],distance: _nh[index]).length == 0
+               
+                @bus_detail = BusDetail.create(board_id: c[c[_nh[index]]] -1 ,route_name: routes, bus_number: n['busNumber'],name: c[_nh[index]],distance: _nh[index],
+                  arrived_at: Time.now(),dir: 2)
+                end
+
+              end
              end
 
          else

@@ -19,12 +19,18 @@ Rails.application.routes.draw do
 
 	 namespace :admin do
 	    root 'home#index'
+      get 'setting' => 'setting#index'
+      get 'transfor' => 'setting#transfor'
+      get 'transfor_all' => 'setting#transfor_all'
+
 	    resources :articles
   	  resources :schedules
       resources :boards
       resources :nutritions
       resources :beans
       resources :bean_nutritions
+      resources :pages
+      resources :app_settings
 	 end
 
 

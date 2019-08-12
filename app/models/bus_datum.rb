@@ -1,0 +1,2 @@
+class BusDatum < ApplicationRecord
+end
