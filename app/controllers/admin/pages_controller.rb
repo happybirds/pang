@@ -15,7 +15,7 @@ class Admin::PagesController < Admin::ApplicationController
         if setting.name.include? 'system'
           @glo << setting.name
         else
-          if(setting.pages.count < 3 ) 
+          if(setting.pages.count < 2 ) 
             @pri << setting.name
           else
              @glo << setting.name
