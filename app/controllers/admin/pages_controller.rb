@@ -29,7 +29,7 @@ class Admin::PagesController < Admin::ApplicationController
 
   def update
     if @page.update(page_params)
-      redirect_to admin_pages_path, notice: '更新成功.'
+      redirect_to admin_setting_path, notice: 'success.'
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class Admin::PagesController < Admin::ApplicationController
     @page = Page.new(page_params)
     respond_to do |format|
       if @page.save
-        format.html { redirect_to admin_setting_path, notice: '新建成功.' }
+        format.html { redirect_to admin_setting_path, notice: 'success.' }
       else
         format.html { render :new }
       end

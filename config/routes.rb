@@ -46,7 +46,7 @@ Rails.application.routes.draw do
       get 'timer' =>'timer#timer'
 
       get 'count' => 'paths#count'
-      get 'bridge' => 'bridge#index'
+      get '/bridge/info' => 'bridge#info'
       get 'airport' => 'airport#index'
       get 'ferry' => 'ferry#index'
       get '/garbages/detail'=> 'garbages#detail'
