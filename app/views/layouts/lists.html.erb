@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pang</title>
+    <title>Identify Program</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@7.33.1/dist/sweetalert2.min.css">
 
     <%= stylesheet_link_tag    'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.33.1/dist/sweetalert2.min.js"></script>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'false' %>
   </head>
@@ -15,7 +19,7 @@
     <div class="container">
       <%#= render "shared/top"%>
       <%= yield %>
-      <%= render "shared/footer"%>
+      <%#= render "shared/footer"%>
     </div>
   </body>
 </html>
